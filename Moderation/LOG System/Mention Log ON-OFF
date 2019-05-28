@@ -1,0 +1,130 @@
+{
+  "name": "mention-log-on/off",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "PoOtT",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "an-/-aus",
+      "comparison": "1",
+      "value": "\"an\"",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Server Data"
+    },
+    {
+      "condition": "1",
+      "comparison": "2",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "3",
+      "storage": "1",
+      "varName2": "display name",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "member id",
+      "name": "Store Member Info"
+    },
+    {
+      "message": "0",
+      "varName": "",
+      "info": "13",
+      "storage": "1",
+      "varName2": "mentioned users",
+      "name": "Store Message Info"
+    },
+    {
+      "message": "0",
+      "varName": "",
+      "info": "14",
+      "storage": "1",
+      "varName2": "mentioned users number",
+      "name": "Store Message Info"
+    },
+    {
+      "message": "0",
+      "varName": "",
+      "info": "4",
+      "storage": "1",
+      "varName2": "msg-channel",
+      "name": "Store Message Info"
+    },
+    {
+      "message": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "msg-text",
+      "name": "Store Message Info"
+    },
+    {
+      "info": "0",
+      "find": "${serverVars(\"Mention-Log-Channel\")}",
+      "storage": "1",
+      "varName": "channel",
+      "name": "Find Channel"
+    },
+    {
+      "title": "Erwähnte User auf dem Discord",
+      "author": "",
+      "color": "#0EBFE9",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "em",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "em",
+      "fieldName": "User Auslöser",
+      "message": "Der ${tempVars(\"display name\")} mit folgender ID: __(${tempVars(\"member id\")})__",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "em",
+      "fieldName": "Erwähnte folgende User:",
+      "message": "${tempVars(\"mentioned users number\")} user(s): ${tempVars(\"mentioned users\")} wurde/n im Channel ${tempVars(\"msg-channel\")} erwähnt",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "em",
+      "fieldName": "Mit folgender Nachricht:",
+      "message": "${tempVars(\"msg-text\")}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "em",
+      "channel": "5",
+      "varName2": "channel",
+      "name": "Send Embed Message"
+    }
+  ],
+  "comType": "3"
+}
