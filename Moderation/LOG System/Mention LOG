@@ -1,0 +1,144 @@
+{
+  "name": "mention-log",
+  "permissions": "ADMINISTRATOR",
+  "restriction": "1",
+  "_id": "Trgdm",
+  "actions": [
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "an-/-aus",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "an-/-aus",
+      "comparison": "5",
+      "value": "\"aus\"",
+      "iftrue": "2",
+      "iftrueVal": "14",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "condition": "2",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "2",
+      "iftrueVal": "5",
+      "iffalse": "2",
+      "iffalseVal": "19",
+      "name": "Check Parameters"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "channel id",
+      "name": "Store Channel Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "Mention-Log-Channel",
+      "changeType": "0",
+      "value": "tempVars(\"channel id\")",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "Mention-Log-Channel",
+      "defaultVal": "\"aus\"",
+      "storage": "2",
+      "varName2": "Mention-Log-Channel",
+      "name": "Store Server Data"
+    },
+    {
+      "storage": "2",
+      "varName": "Mention-Log-Channel",
+      "name": "Save Variable"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "an-/-aus",
+      "changeType": "0",
+      "value": "\"an\"",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "an-/-ais",
+      "defaultVal": "\"aus\"",
+      "storage": "2",
+      "varName2": "an-/-aus",
+      "name": "Store Server Data"
+    },
+    {
+      "storage": "2",
+      "varName": "an-/-aus",
+      "name": "Save Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Erledigt der Mention-Log ist nun **Aktiviert** und wird im Channel ${mentionedChannel} protokoliert",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "an-/-aus",
+      "changeType": "0",
+      "value": "\"aus\"",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "an-/-aus",
+      "defaultVal": "\"aus\"",
+      "storage": "2",
+      "varName2": "an-/-aus",
+      "name": "Store Server Data"
+    },
+    {
+      "storage": "2",
+      "varName": "an-/-aus",
+      "name": "Save Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Mention Log ist nun Deaktiviert!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Zum Aktivieren gebe folgendes an `!mention-log #channel`(Wobei du #channel durch deinen ersetzen solltest)\nZum Deaktivieren schreibe einfach `!mention-log off`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "0"
+}
