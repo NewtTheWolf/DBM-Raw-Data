@@ -9,3 +9,6 @@ Folgendes Log Methoden stehen euch zur Verfügung
 - Kick und Bann Protokoll
 
 weitere folgen gern auf Wunsch
+
+#Das Mention Log Protokol im Einsatz
+![github-large](https://i.imgur.com/lOeEmyH.gif)
