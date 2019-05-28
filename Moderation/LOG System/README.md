@@ -8,7 +8,13 @@ Folgendes Log Methoden stehen euch zur Verfügung
 - User Erwähnung Protokoll
 - Kick und Bann Protokoll
 
-weitere folgen gern auf Wunsch
+Für alle RAW DATAS bennötigt ihr die Aktuellen [DBM Modsw](https://github.com/Discord-Bot-Maker-Mods/DBM-Mods) und die **DBM Beta Steam Version**
+
+# Editierte nachrichten.
+Diese RAW Data müsst ihr zu euren **Events** packen damit diese Funktioniert.
+So sieht dann das ganze im Einsatz aus
+![github-large](https://i.imgur.com/xHf1AMY.gif)
+
 
 # Das Mention Log Protokol
 Es stehen euch 2 Raw Datas zur Verfügung **mention-log** und **mention-log-on/off**
