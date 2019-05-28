@@ -13,7 +13,7 @@ Für alle RAW DATAS bennötigt ihr die Aktuellen [DBM Modsw](https://github.com/
 # Editierte nachrichten.
 Diese RAW Data müsst ihr zu euren **Events** packen damit diese Funktioniert.
 
-WICHTIG: **ACTION #5 anpassen** Tragt dort eure Channel ID ein wo es geloggt werden soll
+WICHTIG: **ACTION #6 anpassen** Tragt dort eure Channel ID ein wo es geloggt werden soll
 
 So sieht dann das ganze im Einsatz aus
 ![github-large](https://i.imgur.com/xHf1AMY.gif)
