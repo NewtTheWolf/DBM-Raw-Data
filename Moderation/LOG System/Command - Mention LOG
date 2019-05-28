@@ -134,7 +134,7 @@
     {
       "channel": "0",
       "varName": "",
-      "message": "Zum Aktivieren gebe folgendes an `!mention-log #channel`(Wobei du #channel durch deinen ersetzen solltest)\nZum Deaktivieren schreibe einfach `!mention-log off`",
+      "message": "Zum Aktivieren gebe folgendes an `!mention-log #channel`(Wobei du #channel durch deinen ersetzen solltest)\nZum Deaktivieren schreibe einfach `!mention-log aus`",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
