@@ -37,11 +37,21 @@
       "name": "Store Message Info"
     },
     {
+      "comment": "⬇ CHANNEL ID EINTRAGEN ⬇",
+      "color": "#ff8040",
+      "name": "Comment"
+    },
+    {
       "info": "0",
-      "find": "HIER DEINE LOG CHANNEL ID EINTRAGEN",
+      "find": "HIER DEINE CHANNEL ID EINTRAGEN",
       "storage": "1",
       "varName": "logchannel",
       "name": "Find Channel"
+    },
+    {
+      "comment": "⬆ CHANNEL ID EINTRAGEN ⬆ ",
+      "color": "#ff8040",
+      "name": "Comment"
     },
     {
       "member": "2",
