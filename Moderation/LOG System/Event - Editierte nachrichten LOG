@@ -1,0 +1,106 @@
+{
+  "name": "Editierte Nachrichten",
+  "temp": "oldmessage",
+  "event-type": "26",
+  "_id": "nLsCN",
+  "actions": [
+    {
+      "message": "1",
+      "varName": "oldmessage",
+      "info": "2",
+      "storage": "1",
+      "varName2": "oldtext",
+      "name": "Store Message Info"
+    },
+    {
+      "message": "1",
+      "varName": "message",
+      "info": "2",
+      "storage": "1",
+      "varName2": "text",
+      "name": "Store Message Info"
+    },
+    {
+      "message": "1",
+      "varName": "message",
+      "info": "3",
+      "storage": "1",
+      "varName2": "author",
+      "name": "Store Message Info"
+    },
+    {
+      "message": "1",
+      "varName": "message",
+      "info": "4",
+      "storage": "1",
+      "varName2": "channel",
+      "name": "Store Message Info"
+    },
+    {
+      "info": "0",
+      "find": "553860527076540426",
+      "storage": "1",
+      "varName": "logchannel",
+      "name": "Find Channel"
+    },
+    {
+      "member": "2",
+      "varName": "author",
+      "info": "1",
+      "storage": "1",
+      "varName2": "authorid",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "authorid",
+      "comparison": "1",
+      "value": "${client.user.id}",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "oldtext",
+      "comparison": "1",
+      "value": "tempVars(\"text\")",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "title": "Nachricht wurde editiert",
+      "author": "",
+      "color": "fff000",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "**Der User:** ${tempVars(\"author\")}\n**Editierte im Channel:** ${tempVars(\"channel\")}\n\n**Seine Nachricht (Alter Text):**\n${tempVars(\"oldtext\")}\n\n**Wie folgt um (Neuer Text):** \n${tempVars(\"text\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "5",
+      "varName2": "logchannel",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "temp2": "message"
+}
