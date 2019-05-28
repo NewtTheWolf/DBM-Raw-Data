@@ -1,0 +1,398 @@
+{
+  "name": "gcreate",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "DvDki",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "info": "22",
+      "storage": "1",
+      "varName2": "sponsor",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "MANAGE_MESSAGES",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "46",
+      "name": "Check Member Permissions"
+    },
+    {
+      "storage": "1",
+      "varName": "maxLoopCAP",
+      "changeType": "0",
+      "value": "0",
+      "name": "Control Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Beschreibe bitte was du Verlosen möchtest. Bsp.: 50 EURO Steam Card",
+      "storage": "1",
+      "varName2": "giveawayPrompt",
+      "name": "Send Message"
+    },
+    {
+      "storage": "1",
+      "varName": "maxLoopCAP",
+      "changeType": "1",
+      "value": "1",
+      "name": "Control Variable"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "1",
+      "code": "\n  const _this = this;\n\n  msg.channel.awaitMessages(response => response, {\n    max: 1,\n    time: 30000,\n    errors: ['time'],\n  })\n  .then((collected) => {\n      _this.storeValue(collected.first(), 1, \"giveawayObject\", cache);\n      _this.callNextAction(cache);\n    })\n    .catch((error) => {\n      console.log(error);\n      msg.channel.send('Command timeout!');\n    });\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "message": "0",
+      "varName": "",
+      "info": "3",
+      "storage": "1",
+      "varName2": "msgAuthor",
+      "name": "Store Message Info"
+    },
+    {
+      "message": "1",
+      "varName": "giveawayObject",
+      "info": "3",
+      "storage": "1",
+      "varName2": "responseAuthor",
+      "name": "Store Message Info"
+    },
+    {
+      "storage": "1",
+      "varName": "maxLoopCAP",
+      "comparison": "1",
+      "value": "20",
+      "iftrue": "2",
+      "iftrueVal": "42",
+      "iffalse": "0",
+      "iffalseVal": "3",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "msgAuthor",
+      "comparison": "1",
+      "value": "tempVars(\"responseAuthor\")",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "5",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "maxLoopCAP",
+      "changeType": "0",
+      "value": "0",
+      "name": "Control Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.author.lastMessage.delete();",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "giveawayPrompt",
+      "message": "Wie viele Teilnehmer können was Gewinnen?\nWenn du nur 1 Preis verlosen möchtest, so gebe einfach eine 1 ein.\nBsp.: 1 = 1 Teilnehmer | 5 = 5 Teilnehmer usw.",
+      "name": "Edit Message"
+    },
+    {
+      "storage": "1",
+      "varName": "maxLoopCAP",
+      "changeType": "1",
+      "value": "1",
+      "name": "Control Variable"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "\n  const _this = this;\n\n  msg.channel.awaitMessages(response => response, {\n    max: 1,\n    time: 30000,\n    errors: ['time'],\n  })\n  .then((collected) => {\n      _this.storeValue(collected.first(), 1, \"numberOfMembers\", cache);\n      _this.callNextAction(cache);\n    })\n    .catch((error) => {\n      console.log(error);\n      msg.channel.send('Command timeout!');\n    });\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "message": "1",
+      "varName": "numberOfMembers",
+      "info": "3",
+      "storage": "1",
+      "varName2": "responseAuthor",
+      "name": "Store Message Info"
+    },
+    {
+      "storage": "1",
+      "varName": "maxLoopCAP",
+      "comparison": "4",
+      "value": "20",
+      "iftrue": "2",
+      "iftrueVal": "42",
+      "iffalse": "0",
+      "iffalseVal": "3",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "msgAuthor",
+      "comparison": "1",
+      "value": "tempVars(\"responseAuthor\")",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "14",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "maxLoopCAP",
+      "changeType": "0",
+      "value": "0",
+      "name": "Control Variable"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "msg.author.lastMessage.delete()\nvar numberOfMembers = tempVars('numberOfMembers').content\nvar giveawayPrompt = tempVars('giveawayPrompt')\n\nif (!isNaN(numberOfMembers) && parseInt(numberOfMembers) > 0) {\n  var numberOfWinners = parseInt(numberOfMembers)\n  this.storeValue(numberOfMembers, 1, 'numberOfMembers', cache)\n  this.callNextAction(cache)\n} else {\n  msg.channel.send({\n    embed: {\n      color: 0xff6666,\n      author: {\n        name: 'Error - Invalid Number',\n        icon_url: (client || this.getDBM().Bot.bot).user.avatarURL\n      },\n      description: 'Du hast eine Falsche Eingabe der Teilnehmer gemacht die etwas Gewinnen können. Gebe es bitte wie folgt ein \\n \\n Bsp.: 1, 5, oder 7'\n    }\n  })\n  giveawayPrompt.delete()\n}",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "giveawayPrompt",
+      "message": "Wie lange soll das Gewinnspiel laufen? Tag | Stunde | Minuten\nFür 24 Stunden trage einfach nur 1d ein\nBsp.: 1d = 1 Tag | 1h = 1 Stunde | 5m = 5 Minuten",
+      "name": "Edit Message"
+    },
+    {
+      "storage": "1",
+      "varName": "maxLoopCAP",
+      "changeType": "1",
+      "value": "1",
+      "name": "Control Variable"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "\n  const _this = this;\n\n  msg.channel.awaitMessages(response => response, {\n    max: 1,\n    time: 30000,\n    errors: ['time'],\n  })\n  .then((collected) => {\n      _this.storeValue(collected.first(), 1, \"giveawayTime\", cache);\n      _this.callNextAction(cache);\n    })\n    .catch((error) => {\n      console.log(error);\n      msg.channel.send('Command timeout!');\n    });\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "message": "1",
+      "varName": "giveawayTime",
+      "info": "3",
+      "storage": "1",
+      "varName2": "responseAuthor",
+      "name": "Store Message Info"
+    },
+    {
+      "storage": "1",
+      "varName": "maxLoopCAP",
+      "comparison": "4",
+      "value": "20",
+      "iftrue": "2",
+      "iftrueVal": "42",
+      "iffalse": "0",
+      "iffalseVal": "3",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "msgAuthor",
+      "comparison": "1",
+      "value": "tempVars(\"responseAuthor\")",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "22",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "maxLoopCAP",
+      "changeType": "0",
+      "value": "0",
+      "name": "Control Variable"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "msg.author.lastMessage.delete()\nvar timeResult = tempVars('giveawayTime').content\ntimeResult = timeResult.toLowerCase()\nvar Discord = require('discord.js')\nvar giveawayPrompt = tempVars('giveawayPrompt')\n\nif (timeResult.includes('d')) {\n  timeResult = timeResult.split('d')\n  if (!isNaN(timeResult[0])) {\n    var time = parseInt(timeResult[0])\n    this.storeValue(time * 1440, 1, 'giveawayTime', cache)\n    var currentDate = new Date()\n    currentDate.setHours(currentDate.getHours(), currentDate.getMinutes() + time * 1440)\n    currentDate = currentDate.toLocaleString('en-US', { timeZone: 'UTC', hour12: true })\n    var currentDateTime = currentDate.split(',')[1]\n    var currentDateDate = currentDate.split(',')[0]\n    var newEmbed = new Discord.RichEmbed({\n      color: 0x2E7F98,\n      author: {\n        name: '🎉 GEWINNSPIEL 🎉',\n        icon_url: (client || this.getDBM().Bot.bot).user.avatarURL\n      },\n      description: 'Folgendes gibt es zu Gewinnen: **' + tempVars('giveawayObject').content + '** \\n Sponsored by **' + tempVars('sponsor') + '**\\n \\n Klicke auf das 🎉 um Teilzunehmen!',\n      footer: {\n        text: 'Das Gewinnspiel Endet am ' + currentDateDate + ' um ' + currentDateTime + ' UTC | Teilnahme für ' + tempVars('numberOfMembers').toString() + ' Gewinner'\n      }\n    })\n    this.storeValue(newEmbed, 1, 'giveawayMessage', cache)\n    this.callNextAction(cache)\n  } else {\n    msg.channel.send({\n      embed: {\n        color: 0xff6666,\n        author: {\n          name: 'Error - Falsche Zeit Angabe',\n          icon_url: (client || this.getDBM().Bot.bot).user.avatarURL\n        },\n        description: 'Falsche Zeit Angabe!, versuche es bitte erneut. \\n \\n Das Format ist [Zeit][d,h,m] \\n Bsp.: 1h = 1 Stunde | 1d = 1 Tag | 5m = 5 Minuten'\n      }\n    })\n    giveawayPrompt.delete()\n  }\n} else if (timeResult.includes('h')) {\n  timeResult = timeResult.split('h')\n  if (!isNaN(timeResult[0])) {\n    var time = parseInt(timeResult[0])\n    this.storeValue(time * 60, 1, 'giveawayTime', cache)\n    var currentDate = new Date()\n    currentDate.setHours(currentDate.getHours(), currentDate.getMinutes() + time * 60)\n    currentDate = currentDate.toLocaleString('en-US', { timeZone: 'UTC', hour12: true })\n    var currentDateTime = currentDate.split(',')[1]\n    var currentDateDate = currentDate.split(',')[0]\n    var newEmbed = new Discord.RichEmbed({\n      color: 0x2E7F98,\n      author: {\n        name: '🎉 GEWINNSPIEL 🎉',\n        icon_url: (client || this.getDBM().Bot.bot).user.avatarURL\n      },\n      description: 'Folgendes gibt es zu Gewinnen **' + tempVars('giveawayObject').content + '** \\n Sponsored by **' + tempVars('sponsor') + '**\\n \\n Klicke auf das 🎉 um Teilzunehmen!!',\n      footer: {\n        text: 'Das Gewinnspiel Endet am ' + currentDateDate + ' um ' + currentDateTime + ' UTC | Teilnahme für ' + tempVars('numberOfMembers').toString() + ' Gewinner'\n      }\n    })\n    this.storeValue(newEmbed, 1, 'giveawayMessage', cache)\n    this.callNextAction(cache)\n  } else {\n    msg.channel.send({\n      embed: {\n        color: 0xff6666,\n        author: {\n          name: 'Error - Faschle Zeit Angabe',\n          icon_url: (client || this.getDBM().Bot.bot).user.avatarURL\n        },\n        description: 'Falsche Zeit Angabe!, versuche es bitte erneut. \\n \\n Das Format ist [Zeit][d,h,m] \\n Bsp.: 1h = 1 Stunde | 1d = 1 Tag | 5m = 5 Minuten'\n      }\n    })\n    giveawayPrompt.delete()\n  }\n} else if (timeResult.includes('m')) {\n  timeResult = timeResult.split('m')\n  if (!isNaN(timeResult[0])) {\n    var time = parseInt(timeResult[0])\n    this.storeValue(time, 1, 'giveawayTime', cache)\n    var currentDate = new Date()\n    currentDate.setHours(currentDate.getHours(), currentDate.getMinutes() + time)\n    currentDate = currentDate.toLocaleString('en-US', { timeZone: 'UTC', hour12: true })\n    var currentDateTime = currentDate.split(',')[1]\n    var currentDateDate = currentDate.split(',')[0]\n    var newEmbed = new Discord.RichEmbed({\n      color: 0x2E7F98,\n      author: {\n        name: '🎉 GEWINNSPIEL 🎉',\n        icon_url: (client || this.getDBM().Bot.bot).user.avatarURL\n      },\n      description: 'Folgendes gibt es zu Gewinnen **' + tempVars('giveawayObject').content + '** \\n Sponsored by **' + tempVars('sponsor') + '**\\n \\n Klicke auf das 🎉 um Teilzunehmen!',\n      footer: {\n        text: 'Das Gewinnspiel Endet am ' + currentDateDate + ' um ' + currentDateTime + ' UTC | Teilnahme für ' + tempVars('numberOfMembers').toString() + ' Gewinner'\n      }\n    })\n    this.storeValue(newEmbed, 1, 'giveawayMessage', cache)\n    this.callNextAction(cache)\n  } else {\n    msg.channel.send({\n      embed: {\n        color: 0xff6666,\n        author: {\n          name: 'Error - Falsche Zeit angabe',\n          icon_url: (client || this.getDBM().Bot.bot).user.avatarURL\n        },\n        description: 'Falsche Zeit Angabe!, versuche es bitte erneut. \\n \\n Das Format ist [Zeit][d,h,m] \\n Bsp.: 1h = 1 Stunde | 1d = 1 Tag | 5m = 5 Minuten'\n      }\n    })\n    giveawayPrompt.delete()\n  }\n} else {\n  msg.channel.send({\n    embed: {\n      color: 0xff6666,\n      author: {\n        name: 'Error - Falsche Zeit angabe',\n        icon_url: (client || this.getDBM().Bot.bot).user.avatarURL\n      },\n      description: 'Falsche Zeit Angabe!, versuche es bitte erneut. \\n \\n Das Format ist [Zeit][d,h,m] \\n Bsp.: 1h = 1 Stunde | 1d = 1 Tag | 5m = 5 Minuten'\n    }\n  })\n}\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "giveawayPrompt",
+      "message": "in Welchem Channel soll das Gewinnspiel veröffentlicht werden?\nBsp.: Im Channel #gewinnspiele",
+      "name": "Edit Message"
+    },
+    {
+      "storage": "1",
+      "varName": "maxLoopCAP",
+      "changeType": "1",
+      "value": "1",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "filter": "content",
+      "max": "1",
+      "time": "20000",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "22",
+      "storage2": "1",
+      "varName2": "channelGiven",
+      "name": "Await Response Call Action"
+    },
+    {
+      "message": "1",
+      "varName": "channelGiven",
+      "info": "3",
+      "storage": "1",
+      "varName2": "responseAuthor",
+      "name": "Store Message Info"
+    },
+    {
+      "storage": "1",
+      "varName": "maxLoopCAP",
+      "comparison": "4",
+      "value": "20",
+      "iftrue": "2",
+      "iftrueVal": "42",
+      "iffalse": "0",
+      "iffalseVal": "3",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "msgAuthor",
+      "comparison": "1",
+      "value": "tempVars(\"responseAuthor\")",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "30",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "maxLoopCAP",
+      "changeType": "0",
+      "value": "0",
+      "name": "Control Variable"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "var channelMentioned = ''\nvar embedMessageStored = tempVars('giveawayMessage')\nvar _this = this\nvar giveawayPrompt = tempVars('giveawayPrompt')\n\nif (msg.author.lastMessage.mentions.channels.first()) {\n  var giveawayChannel = msg.author.lastMessage.mentions.channels.first()\n  _this.storeValue(giveawayChannel, 1, 'giveawayChannel', cache)\n  giveawayChannel.send(embedMessageStored)\n    .then(function (message) {\n      message.react('🎉')\n      _this.storeValue(message, 1, 'giveawayMessageSent', cache)\n    }).catch(function (error) {\n      console.log(error)\n    })\n  embedMessageStored.color = 0x000000\n  _this.storeValue(embedMessageStored, 1, 'giveawayMessage', cache)\n  _this.callNextAction(cache)\n} else {\n  msg.channel.send({\n    embed: {\n      color: 0xff6666,\n      author: {\n        name: 'Error - Falscher Channel',\n        icon_url: msg.mentions.users.first().avatarURL\n      },\n      description: 'Falsche Channel Eingabe!, bitte versuche es erneut. \\n \\n Das Format lautet #[channelname] \\n Bsp.: Wenn du ein Channel mit dem Name #gewinnspiele hast, so gebe #gewinnspiele ein etc.'\n    }\n  })\n  giveawayPrompt.delete()\n}\nmsg.author.lastMessage.delete()",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "giveawayPrompt",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "0",
+      "varName": "giveawayPrompt",
+      "name": "Delete Message"
+    },
+    {
+      "time": "${tempVars(\"giveawayTime\")}",
+      "measurement": "2",
+      "name": "Wait"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "async function getReactions () {\n  try {\n    var giveawayMsg = tempVars('giveawayMessageSent');\n    var giveawayEmbed = tempVars('giveawayMessage');\n    var numberOfMembers = tempVars('numberOfMembers');\n    var winnerArray = [];\n    var winnerText = '';\n    var users = await giveawayMsg.reactions.get('🎉').fetchUsers()\n    var userArray = users.array();\n    \n    if (userArray.length > 1) {\n      userArray = userArray.filter(function(item) { \n        return item.id !== client.user.id\n      })\n      if (userArray.length >= numberOfMembers) {\n        for (var i = 0; i < numberOfMembers; i++) {\n            if (userArray[i].id != client.user.id) {\n                var randomNumber = Math.floor(Math.random() * userArray.length);\n                var randomuser = await userArray[randomNumber];\n                winnerArray.push(randomuser);\n                userArray.splice(userArray.indexOf(randomNumber), randomNumber);\n            }\n        }\n        for (i = 0; i < winnerArray.length; i++) {\n          winnerText = winnerText + winnerArray[i] + '\\n'\n        }\n        giveawayEmbed.author.name = '🎉 Das Gewinnspiel ist Beendet! 🎉';\n        giveawayEmbed.description = giveawayEmbed.description + '\\n \\n **__Der/Die Gewinner sind:__** \\n' + winnerText\n        giveawayEmbed.footer.text = giveawayEmbed.footer.text.replace('will end', 'ended');\n        giveawayMsg.edit(giveawayEmbed)\n        giveawayMsg.channel.send('🎉 Gratulation! 🎉 \\n' + winnerText + 'Du hast Gewonnen **' + tempVars('giveawayObject').content + '**');\n      } else {\n        for (i = 0; i < userArray.length - 1; i++) {\n            if (userArray[i].id != client.user.id) {\n                var randomNumber = Math.floor(Math.random() * userArray.length);\n                var randomuser = await userArray[randomNumber];\n                winnerArray.push(randomuser)\n                userArray.splice(userArray.indexOf(randomNumber) , randomNumber);\n            }\n        }\n        for (i = 0; i < winnerArray.length; i++) {\n          winnerText = winnerText + winnerArray[i] + '\\n';\n        }\n        giveawayEmbed.author.name = '🎉 Das Gewinnspiel ist Beendet 🎉'\n        giveawayEmbed.description = giveawayEmbed.description + '\\n \\n **__Der/Die Gewinner sind:__** \\n' + winnerText\n        giveawayMsg.edit(giveawayEmbed)\n        giveawayMsg.channel.send('🎉 Gratulation! 🎉 \\n' + winnerText + '\\nDu hast Gewonnen **' + tempVars('giveawayObject').content + '**\\n \\nNote:The number of people who reacted isn\\'t enough to satisfy the numbers of members that can win so the bot has gotten the maximum number of people it can draw to win.')\n      }\n    } else {\n      msg.channel.send({\n        embed: {\n          color: 0xff6666,\n          author: {\n            name: 'Schade keiner hat Reagiert',\n            icon_url: (client || this.getDBM().Bot.bot).user.avatarURL\n          },\n          description: 'Leider hat keiner Reagiert, somit gibt es keinen Gewinner'\n        }\n      })\n    }\n  } catch (error) {\n    msg.channel.send({\n      embed: {\n        color: 0xff6666,\n        author: {\n          name: 'Error - Gewinnspiel Error',\n          icon_url: (client || this.getDBM().Bot.bot).user.avatarURL\n        },\n        description: 'Bitte wiederhole einmal das ganze! \\n Hier gab es irgendeinen Fehler. \\n Schaue bitte auch einmal in deiner Console nach, dort wird der Fehler näher Beschrieben.'\n      }\n    })\n    console.log('Giveaway Command Error: ' + error)\n  }\n}\ngetReactions()\n",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "title": "Gewinnspiel erstellung - Zeit abgelaufen!",
+      "author": "",
+      "color": "ff6666",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Leider ist deine zeit für die Eingabe des Commands abgelaufen.\nOder im Channel wird einfach zu viel geschrieben.\n\nSuche dir einen Ruhigen Channel aus und versuche es bitte erneut!",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "title": "Gewinnspiel erstellung - Keine Berechtigung!",
+      "author": "",
+      "color": "ff6666",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Du hast keine Befugniss ein Gewinnspiel ztu erstellen. Dazu brauchst du die Rechte das du **Nachrichten Verwalten** darfst.\nSchaue dir einmal oben die Action #2 an und passe diese gegebendfalls an, wenn du z.B. User mit bestimten Rollen die Befügnis geben möchtest.",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}
