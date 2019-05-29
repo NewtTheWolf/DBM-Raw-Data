@@ -3,9 +3,10 @@
 Big Brother is Watching You ! Mit diesem Log System könnt ihr alles mögliche auf eurem Discord Server Protokollieren.
 Folgendes Log Methoden stehen euch zur Verfügung
 
-- Gelöschte Nachtichten Protokoll
-- Editierte Nachrichten Protokoll
-- User Erwähnung Protokoll
+- Gelöschte Nachtichten Protokollierung
+- Editierte Nachrichten Protokollierung
+- Editierte Usernamen Protokollierung
+- User Erwähnung Protokollierung 
 
 Für alle RAW DATAS bennötigt ihr die Aktuellen [DBM Modsw](https://github.com/Discord-Bot-Maker-Mods/DBM-Mods) und die **DBM Beta Steam Version**
 
@@ -27,6 +28,7 @@ Diese RAW Data müsst ihr zu euren **Events** packen.
 
 # Editierte Usernamen LOG
 Diese RAW Data müsst ihr zu euren **Events** packen.
+
 **Zu Beachten:**
 - **ACTION #7** gebe dort deine **Channel ID** ein wo es geloggt werden soll
 
