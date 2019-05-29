@@ -15,7 +15,7 @@ Wenn ein user seine Nachricht Löscht wird dir dies mit dieser RAW Data angezeig
 
 Wichtig: **ACTIOC #5 anpassen** Trage dort deine Channel ID ein wo es geloggt werden soll.
 
-![github-large](https://i.imgur.com/8WyZPTw.gif)
+![github-large](https://i.imgur.com/WaJO6cY.gif)
 
 # Editierte nachrichten.
 Diese RAW Data müsst ihr zu euren **Events** packen damit diese Funktioniert.
@@ -23,7 +23,7 @@ Diese RAW Data müsst ihr zu euren **Events** packen damit diese Funktioniert.
 WICHTIG: **ACTION #6 anpassen** Tragt dort eure Channel ID ein wo es geloggt werden soll
 
 So sieht dann das ganze im Einsatz aus
-![github-large](https://i.imgur.com/xHf1AMY.gif)
+![github-large](https://i.imgur.com/k69F7ac.gif)
 
 
 # Das Mention Log Protokol
@@ -35,4 +35,4 @@ Beide Raw Datas werden als Command hinzugefügt.
 - !mention-log #channel | Log Channel setzen wo es Protokolliert wird 
 - !mention-log aus | Deaktivieren des Mention Logs
 
-![github-large](https://i.imgur.com/lOeEmyH.gif)
+![github-large](https://i.imgur.com/MJL9En1.gif)
