@@ -1,0 +1,92 @@
+{
+  "name": "LOG Namen Änderung",
+  "temp": "oldname",
+  "event-type": "20",
+  "_id": "FfThm",
+  "actions": [
+    {
+      "member": "2",
+      "varName": "name",
+      "info": "2",
+      "storage": "1",
+      "varName2": "username",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "name",
+      "info": "16",
+      "storage": "1",
+      "varName2": "avatarurl",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "oldname",
+      "info": "3",
+      "storage": "1",
+      "varName2": "oldnamedisplay",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "name",
+      "info": "3",
+      "storage": "1",
+      "varName2": "namedisplay",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "name",
+      "info": "1",
+      "storage": "1",
+      "varName2": "id",
+      "name": "Store Member Info"
+    },
+    {
+      "comment": "⬇ CHANNEL ID EINTRAGEN ⬇",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
+    {
+      "info": "0",
+      "find": "HIER DEINE LOG CHANNEL ID",
+      "storage": "1",
+      "varName": "logchan",
+      "name": "Find Channel"
+    },
+    {
+      "comment": "⬆ CHANNEL ID EINTRAGEN ⬆ ",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
+    {
+      "title": "User hat seinen Namen geändert",
+      "author": "${tempVars(\"username\")}",
+      "color": "RANDOM",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "${tempVars(\"avatarurl\")}",
+      "imageUrl": "",
+      "thumbUrl": "${tempVars(\"avatarurl\")}",
+      "storage": "1",
+      "varName": "embed1",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed1",
+      "message": "Der User __**${tempVars(\"oldnamedisplay\")}**__ hat sein Name geändert zu __**${tempVars(\"namedisplay\")}**__\nID des Users ${tempVars(\"name\")} lautet ${tempVars(\"id\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed1",
+      "channel": "5",
+      "varName2": "logchan",
+      "name": "Send Embed Message"
+    }
+  ],
+  "temp2": "name"
+}
