@@ -43,7 +43,7 @@
     },
     {
       "info": "0",
-      "find": "HIER CHANNEL-ID EINTRAGEN",
+      "find": "CHANNEL-ID HIER EINTRAGEN",
       "storage": "1",
       "varName": "logchannel",
       "name": "Find Channel"
@@ -99,7 +99,7 @@
     {
       "storage": "1",
       "varName": "embed",
-      "message": "**Der User:** ${tempVars(\"author\")}\n**Editierte im Channel:** ${tempVars(\"channel\")}\n\n**Seine Nachricht (Alter Text):**\n${tempVars(\"oldtext\")}\n\n**Wie folgt um (Neuer Text):** \n${tempVars(\"text\")}",
+      "message": "**Der User:** ${tempVars(\"author\")}\n**Editierte im Channel:** ${tempVars(\"channel\")}\n\n**Seine Nachricht (Alter Text):**\n```${tempVars(\"oldtext\")}```\n**Seine Nachricht (Neuer Text):** \n```${tempVars(\"text\")}```",
       "name": "Set Embed Description"
     },
     {
