@@ -17,7 +17,7 @@ Diese RAW Data müsst ihr zu euren **Events** packen.
 
 ![github-large](https://i.imgur.com/WaJO6cY.gif)
 
-# Editierte nachrichten.
+# Editierte Nachrichten LOG
 Diese RAW Data müsst ihr zu euren **Events** packen.
 
 **Zu Beachten:**
@@ -25,7 +25,14 @@ Diese RAW Data müsst ihr zu euren **Events** packen.
 
 ![github-large](https://i.imgur.com/k69F7ac.gif)
 
-# Das Mention Log Protokol
+# Editierte Usernamen LOG
+Diese RAW Data müsst ihr zu euren **Events** packen.
+**Zu Beachten:**
+- **ACTION #7** gebe dort deine **Channel ID** ein wo es geloggt werden soll
+
+![github-large](https://i.imgur.com/LymT1xJ.gif)
+
+# Das Mention LOG
 Es stehen euch 2 Raw Datas zur Verfügung **mention-log** und **mention-log-on/off**
 Beide Raw Datas werden als Command hinzugefügt.
 
