@@ -41,7 +41,7 @@
       "name": "Find Channel"
     },
     {
-      "comment": "⬆ CHANNEL ID EINTRAGEN ⬆ ",
+      "comment": "⬆ CHANNEL-ID EINTRAGEN ⬆ ",
       "color": "#ff8000",
       "name": "Comment"
     },
