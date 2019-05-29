@@ -1,0 +1,106 @@
+{
+  "name": "LOG BotERROR",
+  "temp": "DBM-Error",
+  "event-type": "37",
+  "_id": "OiroK",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "servername",
+      "name": "Store Server Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "serverid",
+      "name": "Store Server Info"
+    },
+    {
+      "comment": "⬇ CHANNEL ID EINTRAGEN ⬇",
+      "color": "#ff8040",
+      "name": "Comment"
+    },
+    {
+      "info": "0",
+      "find": "HIER LOG CHANNEL-ID EINGEBEN",
+      "storage": "1",
+      "varName": "log",
+      "name": "Find Channel"
+    },
+    {
+      "comment": "⬆ CHANNEL ID EINTRAGEN ⬆ ",
+      "color": "#ff8040",
+      "name": "Comment"
+    },
+    {
+      "title": "${tempVars(\"DBM-Error\")}",
+      "author": "",
+      "color": "ff0000",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "true",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "${tempVars(\"JS-Error\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "${tempVars(\"servername\")} [${tempVars(\"serverid\")}]",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "5",
+      "varName2": "log",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "comment": "⬇ ADMIN ID EINTRAGEN ⬇",
+      "color": "#ff8040",
+      "name": "Comment"
+    },
+    {
+      "channel": "5",
+      "varName": "log",
+      "message": "Hey <@HIER ADMIN-ID EINTRAGEN>, da ist scheinbar irgendwas mit einer RAW Data nicht in Ordnung, bitte einmal prüfen ❗",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "comment": "⬆ ADMIN ID EINTRAGEN ⬆ ",
+      "color": "#ff8040",
+      "name": "Comment"
+    }
+  ],
+  "temp2": "JS-Error"
+}
