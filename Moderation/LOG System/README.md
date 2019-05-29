@@ -34,4 +34,4 @@ Beide Raw Datas werden als Command hinzugefügt.
 - !mention-log #channel | Log Channel setzen wo es Protokolliert wird 
 - !mention-log aus | Deaktivieren des Mention Logs
 
-![github-large](https://i.imgur.com/MJL9En1.gif)
+![github-large](https://i.imgur.com/MJL9En1.png)
