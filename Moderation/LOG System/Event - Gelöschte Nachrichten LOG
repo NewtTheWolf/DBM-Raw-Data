@@ -35,7 +35,7 @@
     },
     {
       "info": "0",
-      "find": "HIER CHANNEL-ID EINTRAGEN",
+      "find": "HIER CHANNEL ID EINTRAGEN",
       "storage": "1",
       "varName": "logchannel",
       "name": "Find Channel"
