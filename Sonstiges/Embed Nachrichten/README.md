@@ -4,4 +4,4 @@ Du kannst hier einen **Titel** und eine **Beschreibung** sowie eine **Grafik** a
 
 Diese RAW Data erfordert die [DBM Mods](https://github.com/Discord-Bot-Maker-Mods/DBM-Mods) und Beta Steam Version
 
-![github-large](https://i.imgur.com/S9AL1qO.gif)
+![github-large](https://i.imgur.com/xyO8wFa.gif)
