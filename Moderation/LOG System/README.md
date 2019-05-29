@@ -44,3 +44,13 @@ Beide Raw Datas werden als Command hinzugefügt.
 - !mention-log aus | Deaktivieren des Mention Logs
 
 ![github-large](https://i.imgur.com/MJL9En1.png)
+
+# BOT ERROR LOG
+Diese RAW Data müsst ihr zu euren **Events** packen.
+
+**Zu Beachten:**
+- **ACTION #4** gebe dort deine **Channel ID** ein wo es geloggt werden soll
+- **ACTION #11** gebe hier die ID des Admins / Bot Owner ein der Erwähnt werden soll z.b. <@123456789123456789
+
+![github-large](https://i.imgur.com/GWcUa37.png)
+
