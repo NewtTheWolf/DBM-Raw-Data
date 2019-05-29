@@ -241,7 +241,7 @@
     {
       "channel": "0",
       "varName": "",
-      "message": "DEIN BOT TEXT 10",
+      "message": "DEIN BOT TEXT-10",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
