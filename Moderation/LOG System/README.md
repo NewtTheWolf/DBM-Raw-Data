@@ -7,6 +7,7 @@ Folgendes Log Methoden stehen euch zur Verfügung
 - Editierte Nachrichten Protokollierung
 - Editierte Usernamen Protokollierung
 - User Erwähnung Protokollierung 
+- Bot Error Protokollierung
 
 Für alle RAW DATAS bennötigt ihr die Aktuellen [DBM Modsw](https://github.com/Discord-Bot-Maker-Mods/DBM-Mods) und die **DBM Beta Steam Version**
 
