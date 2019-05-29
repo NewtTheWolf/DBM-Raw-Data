@@ -9,7 +9,7 @@ Folgendes Log Methoden stehen euch zur Verfügung
 - User Erwähnung Protokollierung 
 - Bot Error Protokollierung
 
-Für alle RAW DATAS bennötigt ihr die Aktuellen **[DBM Mods](https://github.com/Discord-Bot-Maker-Mods/DBM-Mods)** und die **DBM Beta Steam Version**
+Für alle RAW DATA´s bennötigt ihr die Aktuellen **[DBM Mods](https://github.com/Discord-Bot-Maker-Mods/DBM-Mods)** und die **DBM Beta Steam Version**
 
 # Gelöschte Nachrichten LOG
 Diese RAW Data müsst ihr zu euren **Events** packen.
