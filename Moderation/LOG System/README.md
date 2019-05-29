@@ -12,16 +12,19 @@ Für alle RAW DATAS bennötigt ihr die Aktuellen [DBM Modsw](https://github.com/
 
 # Gelöschte Nachrichten LOG
 Wenn ein user seine Nachricht Löscht wird dir dies mit dieser RAW Data angezeigt. Diese Raw Data bitte zu euren Events packen.
-- Wichtig: **ACTIOC #5 anpassen** Trage dort deine Channel ID ein wo es geloggt werden soll.
+
+**Zu Beachten:**
+- __ACTIOC #5__ anpassen Trage dort deine Channel ID ein wo es geloggt werden soll.
 
 ![github-large](https://i.imgur.com/WaJO6cY.gif)
 
 # Editierte nachrichten.
 Diese RAW Data müsst ihr zu euren **Events** packen damit diese Funktioniert.
-- WICHTIG: **ACTION #6 anpassen** Tragt dort eure Channel ID ein wo es geloggt werden soll
+
+**Zu Beachten:**
+- __ACTION #6__ anpassen Tragt dort eure Channel ID ein wo es geloggt werden soll
 
 ![github-large](https://i.imgur.com/k69F7ac.gif)
-
 
 # Das Mention Log Protokol
 Es stehen euch 2 Raw Datas zur Verfügung **mention-log** und **mention-log-on/off**
