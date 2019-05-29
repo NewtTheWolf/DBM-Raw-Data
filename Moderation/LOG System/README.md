@@ -10,15 +10,15 @@ Folgendes Log Methoden stehen euch zur Verfügung
 
 Für alle RAW DATAS bennötigt ihr die Aktuellen [DBM Modsw](https://github.com/Discord-Bot-Maker-Mods/DBM-Mods) und die **DBM Beta Steam Version**
 
-# Gelöschte nachrichten LOG
+# Gelöschte Nachrichten LOG
 Wenn ein user seine Nachricht Löscht wird dir dies mit dieser RAW Data angezeigt. Diese Raw Data bitte zu euren Events packen.
-Wichtig: **ACTIOC #5 anpassen** Trage dort deine Channel ID ein wo es geloggt werden soll.
+!Wichtig: **ACTIOC #5 anpassen** Trage dort deine Channel ID ein wo es geloggt werden soll.
 
 ![github-large](https://i.imgur.com/WaJO6cY.gif)
 
 # Editierte nachrichten.
 Diese RAW Data müsst ihr zu euren **Events** packen damit diese Funktioniert.
-WICHTIG: **ACTION #6 anpassen** Tragt dort eure Channel ID ein wo es geloggt werden soll
+!WICHTIG: **ACTION #6 anpassen** Tragt dort eure Channel ID ein wo es geloggt werden soll
 
 ![github-large](https://i.imgur.com/k69F7ac.gif)
 
