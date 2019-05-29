@@ -90,7 +90,7 @@
     {
       "channel": "0",
       "varName": "",
-      "message": "Erledigt der Mention-Log ist nun **Aktiviert** und wird im Channel ${mentionedChannel} protokoliert",
+      "message": "Erledigt der Mention-Log ist nun **Aktiviert** und wird im Channel ${mentionedChannel} protokolliert",
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
