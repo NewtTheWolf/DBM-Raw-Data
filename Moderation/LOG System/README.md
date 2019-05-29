@@ -6,7 +6,6 @@ Folgendes Log Methoden stehen euch zur Verfügung
 - Gelöschte Nachtichten Protokoll
 - Editierte Nachrichten Protokoll
 - User Erwähnung Protokoll
-- Kick und Bann Protokoll
 
 Für alle RAW DATAS bennötigt ihr die Aktuellen [DBM Modsw](https://github.com/Discord-Bot-Maker-Mods/DBM-Mods) und die **DBM Beta Steam Version**
 
