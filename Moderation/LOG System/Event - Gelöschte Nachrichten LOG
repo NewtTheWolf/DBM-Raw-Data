@@ -35,13 +35,13 @@
     },
     {
       "info": "0",
-      "find": "HIER CHANNEL-ID EINTRAGEN",
+      "find": "557439767562682379",
       "storage": "1",
       "varName": "logchannel",
       "name": "Find Channel"
     },
     {
-      "comment": "⬆ CHANNEL-ID EINTRAGEN ⬆ ",
+      "comment": "⬆ CHANNEL ID EINTRAGEN ⬆ ",
       "color": "#ff8000",
       "name": "Comment"
     },
@@ -80,7 +80,7 @@
     {
       "storage": "1",
       "varName": "embed",
-      "message": "Die nachricht von User: __${tempVars(\"author\")}__\nWurde im Channel: __${tempVars(\"channel\")}__ gelöscht!\n\nDie nachricht hatte folgenden Inhalt:\n```${tempVars("text")}```",
+      "message": "Die nachricht von User: __${tempVars(\"author\")}__\nWurde im Channel: __${tempVars(\"channel\")}__ gelöscht!\n\nDie nachricht hatte folgenden Inhalt:\n```${tempVars(\"text\")}```",
       "name": "Set Embed Description"
     },
     {
