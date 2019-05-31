@@ -5,6 +5,39 @@
   "_id": "uSnBK",
   "actions": [
     {
+      "member": "1",
+      "varName": "",
+      "dataName": "${msg.guild.id}blacklist",
+      "defaultVal": "false",
+      "storage": "1",
+      "varName2": "blacklisted",
+      "name": "Store Member Data"
+    },
+    {
+      "storage": "1",
+      "varName": "blacklisted",
+      "comparison": "1",
+      "value": "true",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Sorry dieser Command ist Blacklisted für dich",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
       "storage": "0",
       "varName": "",
       "name": "Delete Message"
@@ -28,7 +61,7 @@
       "iftrue": "0",
       "iftrueVal": "",
       "iffalse": "3",
-      "iffalseVal": "25",
+      "iffalseVal": "29",
       "storage2": "1",
       "varName2": "title",
       "name": "Await Response Call Action"
@@ -60,7 +93,7 @@
       "iftrue": "0",
       "iftrueVal": "",
       "iffalse": "3",
-      "iffalseVal": "22",
+      "iffalseVal": "26",
       "storage2": "1",
       "varName2": "desc",
       "name": "Await Response Call Action"
@@ -92,7 +125,7 @@
       "iftrue": "0",
       "iftrueVal": "17",
       "iffalse": "3",
-      "iffalseVal": "19",
+      "iffalseVal": "23",
       "storage2": "0",
       "varName2": "image",
       "name": "Await Response Call Action"
@@ -124,7 +157,7 @@
       "iftrue": "0",
       "iftrueVal": "",
       "iffalse": "3",
-      "iffalseVal": "16",
+      "iffalseVal": "20",
       "storage2": "1",
       "varName2": "channelname",
       "name": "Await Response Call Action"
@@ -254,7 +287,7 @@
     {
       "channel": "0",
       "varName": "",
-      "message": "Hey, <@${tempVars(\"id\")}> Du hast leider zu lange gewartet bei der Eingabe. Bitte mache diese von Anfang an erneut!.",
+      "message": "Hey, ${member} Du hast leider zu lange gewartet bei der Eingabe. Bitte mache diese von Anfang an erneut!.",
       "storage": "1",
       "varName2": "timedout",
       "iffalse": "0",
