@@ -7,6 +7,14 @@
     {
       "message": "1",
       "varName": "oldmessage",
+      "info": "15",
+      "storage": "1",
+      "varName2": "msgurl",
+      "name": "Store Message Info"
+    },
+    {
+      "message": "1",
+      "varName": "oldmessage",
       "info": "2",
       "storage": "1",
       "varName2": "oldtext",
@@ -43,7 +51,7 @@
     },
     {
       "info": "0",
-      "find": "CHANNELID",
+      "find": "HIER LOG CHANNEL ID EINTRAGEN",
       "storage": "1",
       "varName": "logchannel",
       "name": "Find Channel"
@@ -87,11 +95,19 @@
       "title": "Nachricht wurde editiert",
       "author": "",
       "color": "FF0000",
-      "timestamp": "true",
       "url": "",
       "authorIcon": "",
+      "authorUrl": "",
       "imageUrl": "",
       "thumbUrl": "",
+      "timestamp": "true",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
       "storage": "1",
       "varName": "embed",
       "name": "Create Embed Message"
@@ -99,7 +115,7 @@
     {
       "storage": "1",
       "varName": "embed",
-      "message": "**Der User:** ${tempVars(\"author\")}\n**Editierte im Channel:** ${tempVars(\"channel\")}\n\n**Seine Nachricht (Alter Text):**\n```${tempVars(\"oldtext\")}```\n**Seine Nachticht (Neuer Text):** \n```${tempVars(\"text\")}```",
+      "message": "**Der User:** ${tempVars(\"author\")}\n**Editierte im Channel:** ${tempVars(\"channel\")}\n\n**Seine Nachricht (Alter Text):**\n```${tempVars(\"oldtext\")}```\n**Seine Nachricht (Neuer Text):** \n```${tempVars(\"text\")}```\n**Zur Nachricht springen:**\n ${tempVars(\"msgurl\")}",
       "name": "Set Embed Description"
     },
     {
