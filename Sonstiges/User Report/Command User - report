@@ -1,0 +1,283 @@
+{
+  "name": "report",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "ltzVl",
+  "actions": [
+    {
+      "comment": "Für Hilfe oder Probleme wende dich gern an dbm@thaliruth.de",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "info": "2",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "erwähnter-user",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "1",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "begründung",
+      "name": "Store Command Params"
+    },
+    {
+      "changeType": "0",
+      "value": "tempVars(\"begründung\").toLocaleLowerCase()",
+      "storage": "1",
+      "varName": "begründung",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "erwähnter-user",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "2",
+      "iftrueVal": "11",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**Falesches Format:**\nVerwende bitte !report @user begründung\nBeispiel: @report @user Der User Spamt mich mit Werbung zu",
+      "storage": "1",
+      "varName2": "msg1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "msg1",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "1",
+      "iftrue": "2",
+      "iftrueVal": "16",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**Fehler:** \nBitte gebe eine begründung für diesn Report an.\nBeispiel !report @user Der User Spamt mich mit Werbung zu",
+      "storage": "1",
+      "varName2": "msg2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "msg2",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "erwähnungs-id",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "erwähnungs-id",
+      "comparison": "1",
+      "value": "${msg.author.id}",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "23",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**Fehler:** \nDu Lappen! Du kannst dich nicht selber Reporten!",
+      "storage": "1",
+      "varName2": "msg3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "msg3",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "⬇ LOG Channel ID für das Report LOG angeben",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
+    {
+      "info": "0",
+      "find": "CHANNEL ID HIER EINTRAGEN",
+      "storage": "1",
+      "varName": "reportchan",
+      "name": "Find Channel"
+    },
+    {
+      "comment": "⬆ LOG Channel ID für das Report LOG angeben",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "22",
+      "storage": "1",
+      "varName2": "username",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "22",
+      "storage": "1",
+      "varName2": "reportname",
+      "name": "Store Member Info"
+    },
+    {
+      "type": "2",
+      "storage": "1",
+      "varName": "tag",
+      "name": "Store Time Info"
+    },
+    {
+      "type": "1",
+      "storage": "1",
+      "varName": "monat",
+      "name": "Store Time Info"
+    },
+    {
+      "type": "0",
+      "storage": "1",
+      "varName": "jahr",
+      "name": "Store Time Info"
+    },
+    {
+      "filename": "./resources/Reports/${tempVars(\"username\")}.json",
+      "storage": "1",
+      "varName2": "file",
+      "name": "Read File"
+    },
+    {
+      "input": "${tempVars(\"file\")}\\n**Grund:** ${tempVars(\"begründung\")}\n**Reportet durch:** ${tempVars(\"reportname\")}\n**Reportet am:** ${tempVars(\"tag\")}.${tempVars(\"monat\")}.${tempVars(\"jahr\")}\n",
+      "format": ".json",
+      "filename": "${tempVars(\"username\")}",
+      "filepath": "./resources/Reports/",
+      "filetask": "1",
+      "name": "File Control"
+    },
+    {
+      "title": "User Report",
+      "author": "${tempVars(\"erwähnter-user\").displayName}",
+      "color": "FF0000",
+      "url": "",
+      "authorIcon": "${tempVars(\"erwähnter-user\").user.displayAvatarURL}",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "true",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "report-embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "report-embed",
+      "message": "${member} Reportet ${mentionedUser}.",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "report-embed",
+      "fieldName": "Grund",
+      "message": "${tempVars(\"begründung\")}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "report-embed",
+      "channel": "5",
+      "varName2": "reportchan",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "✅ Dein Report wurde gesendet!",
+      "storage": "1",
+      "varName2": "msg5",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "msg5",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    }
+  ],
+  "comType": "0"
+}
