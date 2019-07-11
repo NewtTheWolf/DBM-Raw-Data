@@ -1,0 +1,165 @@
+{
+  "name": "reports",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "MjClt",
+  "actions": [
+    {
+      "comment": "Für Hilfe oder Probleme wende dich gern an dbm@thaliruth.de",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "KICK_MEMBERS",
+      "iftrue": "2",
+      "iftrueVal": "7",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Sorry ${member} aber um diesen Command ausführen zu können brauchst du die Rechte das du **Member Kicken** kannst.",
+      "storage": "1",
+      "varName2": "msg1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "msg1",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "22",
+      "storage": "1",
+      "varName2": "username",
+      "name": "Store Member Info"
+    },
+    {
+      "filename": "./resources/Reports/${tempVars(\"username\")}.json",
+      "storage": "1",
+      "varName2": "file",
+      "name": "Read File"
+    },
+    {
+      "storage": "1",
+      "varName": "file",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "17",
+      "name": "Check Variable"
+    },
+    {
+      "title": "User Report Übersicht",
+      "author": "",
+      "color": "RANDOM",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "${tempVars(\"file\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "4",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**Fehler:** \nBitte geben einen Richtigen Usernamen an\nBeispiel !reports @user",
+      "storage": "1",
+      "varName2": "msg2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "msg2",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Es wurden bisher keine Reports für den user ${mentionedUser} eingereicht!",
+      "storage": "1",
+      "varName2": "msg3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "msg3",
+      "name": "Delete Message"
+    }
+  ]
+}
