@@ -3,9 +3,9 @@
 Dies ist ein System um User zu Reporten, jeder Discord User hat somit die Möglichkeiten einen User auf deinem Discord Server zu Reporten/Melden. Wenn ein User Reportet wurde, passiert soweit nichts. Der Admin/Staff/Mod kann dann entscheiden was er mit diesem Report und User anstellen wird.
 
 **Befehle**
-!Report @user Grund
-!Reports @user
-!Delreports @user
+[prefix]report @user Grund
+[prefix]reports @user
+[prefix}delreports @user
 
 Besp.: !report @Tahliruth Dieser User Spamt mich immer zu! (Der User Thaliruth wird mit dem Grund gemeldet)
 Besp.: !reports @Thaliruth (Zeigt dir alle Reports zum User Thaliruth an)
