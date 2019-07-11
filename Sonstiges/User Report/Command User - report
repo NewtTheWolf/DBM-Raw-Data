@@ -74,10 +74,23 @@
       "comparison": "2",
       "value": "1",
       "iftrue": "2",
-      "iftrueVal": "16",
-      "iffalse": "0",
-      "iffalseVal": "",
+      "iftrueVal": "18",
+      "iffalse": "2",
+      "iffalseVal": "14",
       "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**Fehler:** \nTja du Löscht hier also irgendwelche Actionen aus dieser Raw Data und Wuders dich dann das du diesen Text hier lesen musst, und das somit diese ganze Raw Data nicht mehr Funktioniert?\nNun ja Sorry aber da hast du nun mal Selber Schuld. Bitte Verwende das original und ändere oder Lösche nichts wenn du Keine Ahnung hast.\n\nImmer wollt ihr alles auf einem Silbertablet gelegt bekommen, macht dann einfach Copy&Paste. Sorry aber nicht mit mir ;)",
+      "storage": "0",
+      "varName2": "msg2",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
     },
     {
       "channel": "0",
@@ -118,7 +131,7 @@
       "iftrue": "0",
       "iftrueVal": "",
       "iffalse": "2",
-      "iffalseVal": "23",
+      "iffalseVal": "25",
       "name": "Check Variable"
     },
     {
