@@ -1,0 +1,123 @@
+{
+  "name": "delreports",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "kWdBx",
+  "actions": [
+    {
+      "comment": "Für Hilfe oder Probleme wende dich gern an dbm@thaliruth.de",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "ADMINISTRATOR",
+      "iftrue": "2",
+      "iftrueVal": "8",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Sorry ${member} aber die Rports kann nur ein User mit **Administrator Rechten** löschen",
+      "storage": "1",
+      "varName2": "msg1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "msg1",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "1",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "2",
+      "iftrueVal": "13",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**Fehler**\nBitte gebe einen Discord Username an von dem du die Reports Löschen möchtest.\n\n__Beispiel: !delreports @user__",
+      "storage": "1",
+      "varName2": "msg2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "msg2",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "22",
+      "storage": "1",
+      "varName2": "username",
+      "name": "Store Member Info"
+    },
+    {
+      "input": "",
+      "format": ".json",
+      "filename": "${tempVars(\"username\")}",
+      "filepath": "./resources/Reports/",
+      "filetask": "3",
+      "name": "File Control"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Alle Reports vom User ${mentionedUser} wurden gelöscht",
+      "storage": "1",
+      "varName2": "msg3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "msg3",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    }
+  ]
+}
