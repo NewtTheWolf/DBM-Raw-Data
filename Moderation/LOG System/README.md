@@ -11,7 +11,7 @@ Folgendes Log Methoden stehen euch zur Verfügung
 
 Für alle RAW DATA´s bennötigt ihr die Aktuellen **[DBM Mods](https://github.com/Discord-Bot-Maker-Mods/DBM-Mods)** und die **DBM Beta Steam Version**
 
-# Gelöschte Nachrichten LOG
+# Gelöschte Nachrichten LOG (UPDATE 12.07.2019)
 Diese RAW Data müsst ihr zu euren **Events** packen.
 
 **Zu Beachten:**
