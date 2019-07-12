@@ -216,11 +216,30 @@
       "name": "Read File"
     },
     {
-      "input": "${tempVars(\"file\")}\\n**Grund:** ${tempVars(\"begründung\")}\n**Reportet durch:** ${tempVars(\"reportname\")}\n**Reportet am:** ${tempVars(\"tag\")}.${tempVars(\"monat\")}.${tempVars(\"jahr\")}\n",
+      "storage": "1",
+      "varName": "file",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "34",
+      "name": "Check Variable"
+    },
+    {
+      "input": "**Grund:** ${tempVars(\"begründung\")}\n**Reportet durch:** ${tempVars(\"reportname\")}\n**Reportet am:** ${tempVars(\"tag\")}.${tempVars(\"monat\")}.${tempVars(\"jahr\")}\\n\n",
       "format": ".json",
       "filename": "${tempVars(\"username\")}",
       "filepath": "./resources/Reports/",
       "filetask": "1",
+      "name": "File Control"
+    },
+    {
+      "input": "**Grund:** ${tempVars(\"begründung\")}\n**Reportet durch:** ${tempVars(\"reportname\")}\n**Reportet am:** ${tempVars(\"tag\")}.${tempVars(\"monat\")}.${tempVars(\"jahr\")}\n",
+      "format": ".json",
+      "filename": "${tempVars(\"username\")}",
+      "filepath": "./resources/Reports/",
+      "filetask": "2",
       "name": "File Control"
     },
     {
