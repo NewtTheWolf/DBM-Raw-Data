@@ -3,7 +3,13 @@
   "temp": "message",
   "event-type": "18",
   "_id": "fUOSC",
+  "Author": "Thaliruth#9938",
   "actions": [
+    {
+      "comment": "Copyright by Thaliruth#9938 - Support dbm@thaliruth.de",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
     {
       "message": "1",
       "varName": "message",
@@ -35,15 +41,26 @@
     },
     {
       "info": "0",
-      "find": "557439767562682379",
+      "find": "HIER LOG CHANNEL ID",
       "storage": "1",
       "varName": "logchannel",
       "name": "Find Channel"
     },
     {
-      "comment": "⬆ CHANNEL ID EINTRAGEN ⬆ ",
+      "comment": "⬇ BOT PREFIX EINTRAGEN ⬇",
       "color": "#ff8000",
       "name": "Comment"
+    },
+    {
+      "storage": "1",
+      "varName": "text",
+      "comparison": "10",
+      "value": "\"!\"",
+      "iftrue": "2",
+      "iftrueVal": "17",
+      "iffalse": "0",
+      "iffalseVal": "8",
+      "name": "Check Variable"
     },
     {
       "member": "2",
@@ -60,19 +77,45 @@
       "value": "${client.user.id}",
       "iftrue": "1",
       "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "11",
+      "name": "Check Variable"
+    },
+    {
+      "count": "2",
+      "name": "Skip Actions"
+    },
+    {
+      "channel": "5",
+      "varName": "logchannel",
+      "message": "**ERROR ERROR**\nLeider ist ein Fehler aufgetaucht, und ich kann dir sogar genau sagen warum es so ist. \nDiese RAW DATA wurde von THALIRUTH#9938 erstellt, nun kommst du daher und fummelst daran rum und hast aber Null Ahnung was du da machst.\nTja und das ist nun dein problem, deswegen siehst du nun diese Meldung hier.\n\nNutze das Original ohne es zu ändern und du wirst diese __NACHRICHT__ nicht mehr sehen! \n",
+      "storage": "0",
+      "varName2": "",
       "iffalse": "0",
       "iffalseVal": "",
-      "name": "Check Variable"
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
     },
     {
       "title": "Folgende Nachricht wurde gelöscht",
       "author": "",
       "color": "FF0000",
-      "timestamp": "true",
       "url": "",
       "authorIcon": "",
+      "authorUrl": "",
       "imageUrl": "",
       "thumbUrl": "",
+      "timestamp": "true",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
       "storage": "1",
       "varName": "embed",
       "name": "Create Embed Message"
@@ -91,6 +134,19 @@
       "storage3": "0",
       "varName3": "",
       "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "5",
+      "varName": "logchannel",
+      "message": "**Fehler:** \nTja du Löscht hier also irgendwelche Actionen aus dieser Raw Data und Wuders dich dann das du diesen Text hier lesen musst, und das somit diese ganze Raw Data nicht mehr Funktioniert?\nNun ja Sorry aber da hast du nun mal Selber Schuld. Bitte Verwende das original und ändere oder Lösche nichts wenn du Keine Ahnung hast.\n\nImmer wollt ihr alles auf einem Silbertablet gelegt bekommen, macht dann einfach Copy&Paste. Sorry aber nicht mit mir ;)",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
     }
   ]
 }
