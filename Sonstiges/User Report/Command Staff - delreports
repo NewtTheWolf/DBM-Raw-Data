@@ -198,7 +198,7 @@
     {
       "channel": "0",
       "varName": "",
-      "message": "Alle Reports vom User ${mentionedUser} wurden gelöscht",
+      "message": "Alle Reports des User ${mentionedUser} wurden gelöscht",
       "storage": "1",
       "varName2": "msg4",
       "iffalse": "0",
