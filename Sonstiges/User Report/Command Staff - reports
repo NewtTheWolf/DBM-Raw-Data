@@ -6,7 +6,7 @@
   "Author": "Thalirut#9938",
   "actions": [
     {
-      "comment": "Copyright by Thaliruth#9938 - Support dbm@thaliruth.de",
+      "comment": "V1.5 Copyright by Thaliruth#9938 - Support dbm@thaliruth.de",
       "color": "#ff8000",
       "name": "Comment"
     },
@@ -145,7 +145,7 @@
     {
       "channel": "0",
       "varName": "",
-      "message": "Es wurden bisher keine Reports für den user ${mentionedUser} eingereicht!",
+      "message": "Es wurden bisher keine Reports für den user ${mentionedUser} eingereicht",
       "storage": "1",
       "varName2": "msg3",
       "iffalse": "0",
