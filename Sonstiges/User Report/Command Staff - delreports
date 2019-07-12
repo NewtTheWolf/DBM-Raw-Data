@@ -56,12 +56,70 @@
       "iftrueVal": "13",
       "iffalse": "0",
       "iffalseVal": "",
+{
+  "name": "delreports",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "kWdBx",
+  "Author": "Thalirut#9938",
+  "actions": [
+    {
+      "comment": "v1.5 Copyright by Thaliruth#9938 - Support dbm@thaliruth.de",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "ADMINISTRATOR",
+      "iftrue": "2",
+      "iftrueVal": "8",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Sorry ${member} aber die Rports kann nur ein User mit **Administrator Rechten** löschen",
+      "storage": "1",
+      "varName2": "msg1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "msg1",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "1",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "2",
+      "iftrueVal": "13",
+      "iffalse": "0",
+      "iffalseVal": "",
       "name": "Check Parameters"
     },
     {
       "channel": "0",
       "varName": "",
-      "message": "**Fehler**\nBitte gebe einen Discord Username an von dem du die Reports Löschen möchtest.\n\n__Beispiel: !delreports @user__",
+      "message": "**Fehler**\nBitte gebe einen Discord Username an, von dem du die Reports Löschen möchtest.\n__Beispiel: !delreports @user__",
       "storage": "1",
       "varName2": "msg2",
       "iffalse": "0",
@@ -90,17 +148,26 @@
       "name": "Store Member Info"
     },
     {
-      "input": "",
-      "format": ".json",
-      "filename": "${tempVars(\"username\")}",
-      "filepath": "./resources/Reports/",
-      "filetask": "3",
-      "name": "File Control"
+      "filename": "./resources/Reports/${tempVars(\"username\")}.json",
+      "storage": "1",
+      "varName2": "file",
+      "name": "Read File"
+    },
+    {
+      "storage": "1",
+      "varName": "file",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "2",
+      "iftrueVal": "20",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
     },
     {
       "channel": "0",
       "varName": "",
-      "message": "Alle Reports des User ${mentionedUser} wurden gelöscht",
+      "message": "**Fehler**\nEs liegen zu für diesen User ${mentionedUser} derzeit keine Reports vor.\nDaher wird diese Aktion abgebrochen",
       "storage": "1",
       "varName2": "msg3",
       "iffalse": "0",
@@ -115,6 +182,37 @@
     {
       "storage": "1",
       "varName": "msg3",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "input": "",
+      "format": ".json",
+      "filename": "${tempVars(\"username\")}",
+      "filepath": "./resources/Reports/",
+      "filetask": "3",
+      "name": "File Control"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Alle Reports vom User ${mentionedUser} wurden gelöscht",
+      "storage": "1",
+      "varName2": "msg4",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "msg4",
       "name": "Delete Message"
     },
     {
