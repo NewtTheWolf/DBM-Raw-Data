@@ -13,7 +13,7 @@ Dies ist ein System um User zu Reporten, jeder Discord User hat somit die Mögli
 - Besp.: !delreports @Thaliruth (Alle Reports vom User Thaliruth werden unwiderruflich gelöscht!
 
 # Zu Beachten
-Beim Command !reports muss die **#Action 23** angepasst werden, trag dort eure Log Channel ID ein!
+Beim Command !reports muss die **#Action 25** angepasst werden, trag dort eure Log Channel ID ein!
 Zudem bracuht ihr die Aktuellen **[DBM Mods](https://github.com/Discord-Bot-Maker-Mods/DBM-Mods)** und die **DBM Beta Steam Version**
 
 ![github-large](https://i.imgur.com/yZ6uewE.gif)
