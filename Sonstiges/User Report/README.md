@@ -1,4 +1,4 @@
-# User Report System
+# User Report System v1.5 (12.07.2019)
 
 Dies ist ein System um User zu Reporten, jeder Discord User hat somit die Möglichkeiten einen User auf deinem Discord Server zu Reporten/Melden. Wenn ein User Reportet wurde, passiert soweit nichts. Der Admin/Staff/Mod kann dann entscheiden was er mit diesem Report und User anstellen wird.
 
