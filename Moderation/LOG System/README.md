@@ -15,7 +15,8 @@ Für alle RAW DATA´s bennötigt ihr die Aktuellen **[DBM Mods](https://github.c
 Diese RAW Data müsst ihr zu euren **Events** packen.
 
 **Zu Beachten:**
-- **ACTIOC #5** gebe dort deine **Channel ID** ein wo es geloggt werden soll.
+- **ACTIOC #6** gebe dort deine **Channel ID** ein wo es geloggt werden soll.
+- **ACTION #8** gebt hier euren **Bot Prefix** ein. (Standard ist es auf **!** eingestellt, dahe rnur ändern wenn ihr einen anderen Prefix als ! verwendet)
 
 ![github-large](https://i.imgur.com/WaJO6cY.gif)
 
