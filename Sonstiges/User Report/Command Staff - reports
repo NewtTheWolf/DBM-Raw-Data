@@ -6,16 +6,21 @@
   "Author": "Thalirut#9938",
   "actions": [
     {
-      "comment": "V1.5 Copyright by Thaliruth#9938 - Support dbm@thaliruth.de",
+      "comment": "v1.5 Copyright by Thaliruth#9938 - Support dbm@thaliruth.de",
       "color": "#ff8000",
       "name": "Comment"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
     },
     {
       "member": "1",
       "varName": "",
       "permission": "KICK_MEMBERS",
       "iftrue": "2",
-      "iftrueVal": "7",
+      "iftrueVal": "8",
       "iffalse": "0",
       "iffalseVal": "",
       "name": "Check Member Permissions"
@@ -44,6 +49,39 @@
       "name": "End Action Sequence"
     },
     {
+      "condition": "1",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "2",
+      "iftrueVal": "13",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**Fehler:** \nBitte geben einen Richtigen Usernamen an\nBeispiel !reports @user",
+      "storage": "1",
+      "varName2": "msg2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "msg2",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
       "member": "0",
       "varName": "",
       "info": "22",
@@ -65,7 +103,7 @@
       "iftrue": "0",
       "iftrueVal": "",
       "iffalse": "2",
-      "iffalseVal": "17",
+      "iffalseVal": "20",
       "name": "Check Variable"
     },
     {
@@ -110,42 +148,9 @@
       "name": "End Action Sequence"
     },
     {
-      "condition": "0",
-      "comparison": "2",
-      "value": "1",
-      "iftrue": "3",
-      "iftrueVal": "4",
-      "iffalse": "0",
-      "iffalseVal": "",
-      "name": "Check Parameters"
-    },
-    {
       "channel": "0",
       "varName": "",
-      "message": "**Fehler:** \nBitte geben einen Richtigen Usernamen an\nBeispiel !reports @user",
-      "storage": "1",
-      "varName2": "msg2",
-      "iffalse": "0",
-      "iffalseVal": "",
-      "name": "Send Message"
-    },
-    {
-      "time": "10",
-      "measurement": "1",
-      "name": "Wait"
-    },
-    {
-      "storage": "1",
-      "varName": "msg2",
-      "name": "Delete Message"
-    },
-    {
-      "name": "End Action Sequence"
-    },
-    {
-      "channel": "0",
-      "varName": "",
-      "message": "Es wurden bisher keine Reports für den user ${mentionedUser} eingereicht",
+      "message": "Es wurden bisher keine Reports für diesen User ${mentionedUser} eingereicht!",
       "storage": "1",
       "varName2": "msg3",
       "iffalse": "0",
