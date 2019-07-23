@@ -1,4 +1,4 @@
-# Advanced Give Away System by Thalireuth#9938
+# Advanced Give Away System by Thalireuth#9938 Ver.: 1.0
 Hier findet ihr ein sehr Umfangreiches Give Away System was vollständig Automatisiert abläuft und beendet wird. Der Gewinner bekommt nach Abschluss des Give Away Automatisch seinen Preis.
 Dieser wird Random von der Preisliste gezogen, wenn dort mehere drauf sind. Sonst kann man es aber auch mit Einzelpreisen machen.
 
