@@ -1,0 +1,5090 @@
+{
+  "name": "gws",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "sCzBc",
+  "author": "Thaliruth#9938",
+  "actions": [
+    {
+      "comment": "COPYRIGHT BY THALIRUTH#9938 - DBM@THALIRUTH.DE",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "author-id",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "KICK_MEMBERS",
+      "iftrue": "2",
+      "iftrueVal": "9",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**__FEHLER: Keine Berechtigung!__**\nSorry ${member} aber um diesen Command ausführen zu können brauchst du **Member Kicken** Rechte.",
+      "storage": "1",
+      "varName2": "msg1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "msg1",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "call": "11",
+      "name": "Jump to Action"
+    },
+    {
+      "count": "1",
+      "name": "Skip Actions"
+    },
+    {
+      "count": "2",
+      "name": "Skip Actions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**__DBM ERROR Nr. 1337 Bitte Kontaktiere den Support!__**\n\nNun ja diese Fehlermeldung musst du nicht zwingend ernst nehmen, aber du fragst dich Vermutlich warum du diesen Fehler angezeigt bekommst.\nDas kann ich dir Erklären. du nutzt hier eine RAW Data von mir (<@289887089057857537>) und hast diese ohne Erfahrungen/Ahnung/Kenntnisse geändert bzw. Modifiziert oder vermutlich irgendwelche Actionen gelöscht.\nEin Erfahrener User weis in der Regel was er nun machen könnte um diesen Fehler zu vermeiden.\n\nUnerfahrene DBM User machen gerne aber immer **Copy&Paste** und Kopieren sich die mühevolle Arbeit anderer User, und verbreiten teilweise sogar deren RAW Datas als ihre eigenen.\nDies möchte ich zumindest mit dieser kleinen Sicherheitprotection versuchen zu vermeiden.\n\n**Daher empfehle ich dir: __Verwende bitte das Original von mir ohne Änderungen__ dann hast du auch keine Fehler**\n",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "subcmd",
+      "name": "Store Command Params"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "2",
+      "iffalseVal": "22",
+      "name": "Check Parameters"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "subcmd",
+      "comparison": "1",
+      "value": "\"info\"",
+      "iftrue": "2",
+      "iftrueVal": "22",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "subcmd",
+      "comparison": "1",
+      "value": "\"start\"",
+      "iftrue": "2",
+      "iftrueVal": "43",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "subcmd",
+      "comparison": "1",
+      "value": "\"clear\"",
+      "iftrue": "2",
+      "iftrueVal": "29",
+      "iffalse": "2",
+      "iffalseVal": "22",
+      "name": "Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "COPYRIGHT BY THALIRUTH#9938 - DBM@THALIRUTH.DE",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
+    {
+      "title": "🎁 **__Gewinnspiel System Commands__**",
+      "author": "",
+      "color": "00ff00",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed-info",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-info",
+      "message": "Das **[p]** vor den unten stehenden Commands ersetzt du bitte durch deinen Bot Prefix wie z.B. **!** od. **,** od. **.** etc. pp.\n```• Teilnehmerliste anzeigen: [p]glist\n• Keyliste anzeigen: [p]keylist view\n• Key hinzufügen: [p]keylist add HIER-DEIN-KEY\n• Key löschen: [p]keylist del HIER-DEIN-KEY\n• Gewinnspiel Starten: [p]gws start```\n__**Information**__\nBeachte bitte das die Teilnehmerliste nach jedem Neustart eines Gewinnspiels automatisch aktualisiert wird. Da hier die Raktionen des Gewinnspiels immer gelesen werden. Daher ist hier ein seperates löschen dieser Liste nicht notwendig.\n\nBeachte bitte auch das nur maximal __**1 Gewinnspiel**__ zur selben Zeit laufen kann!\n\nBeachte bitte auch nocht, das im falle eines Bots Neustart oder Crash das Gewinnspiel vorzeitig abgebrochen ist. Da der Timmer gestoppt wurde. In diesem fall starte das Gewinnspiel erneut!\n",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-info",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "count": "2",
+      "name": "Skip Actions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**__DBM ERROR Nr. 1337 Bitte Kontaktiere den Support!__**\n\nNun ja diese Fehlermeldung musst du nicht zwingend ernst nehmen, aber du fragst dich Vermutlich warum du diesen Fehler angezeigt bekommst.\nDas kann ich dir Erklären. du nutzt hier eine RAW Data von mir (<@289887089057857537>) und hast diese ohne Erfahrungen/Ahnung/Kenntnisse geändert bzw. Modifiziert oder vermutlich irgendwelche Actionen gelöscht.\nEin Erfahrener User weis in der Regel was er nun machen könnte um diesen Fehler zu vermeiden.\n\nUnerfahrene DBM User machen gerne aber immer **Copy&Paste** und Kopieren sich die mühevolle Arbeit anderer User, und verbreiten teilweise sogar deren RAW Datas als ihre eigenen.\nDies möchte ich zumindest mit dieser kleinen Sicherheitprotection versuchen zu vermeiden.\n\n**Daher empfehle ich dir: __Verwende bitte das Original von mir ohne Änderungen__ dann hast du auch keine Fehler**\n",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "3",
+      "varName": "reaclist",
+      "name": "Create List"
+    },
+    {
+      "storage": "3",
+      "varName": "reaclist",
+      "name": "Save Variable"
+    },
+    {
+      "title": "✅ **__Teilnehmerliste geleert__**",
+      "author": "",
+      "color": "00ff00",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed-clear",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-clear",
+      "message": "Die Gewinnspielteilnehmerliste wurde erfolgreich geleert.\nSchreibe **[p]gws info** um dir die Optionen bzw Commands anzeigen zu lassen.",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-clear",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "comment": "COPYRIGHT BY THALIRUTH#9938 - DBM@THALIRUTH.DE",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "title": "❌ **__ERROR: Zeit abgelaufen od. Abgebrochen__**",
+      "author": "",
+      "color": "ff0000",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "gws-embed-timeout",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-timeout",
+      "message": "Deine zeit zur Eingabe ist leider verstrichen, oder du hast selber die Eingabe Abgebrochen\n\nDaher wurde die Action Komplett abgebrochen. Bitte starte daher den Command Komplett neu",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-timeout",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "gws-embed-timeout-del",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "time": "15",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-timeout-del",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "author-titel",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-titel-send",
+      "name": "Delete Message"
+    },
+    {
+      "title": "📢 **__SCHRITT 1: Gewinnspiel Titel__**",
+      "author": "",
+      "color": "00ff00",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "gws-embed-titel",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-titel",
+      "message": "Bitte gebe einen aussagekräftigen Gewinnspieltitel ein, was der Teilnehmer Gewinnen kann.\n```Nach deiner Eingabe werden 3 Reaktionen/Emoji unter deiner Eingabe platziert. Was es damit auf sich hat siehe unten.```",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-titel",
+      "message": "✅ Bestätigen • ❌ Abbrechen • 💬 Bearbeiten",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-titel",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "gws-embed-titel-send",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "filter": "content.length > 0 && author.id === '${tempVars(\"author-id\")}'",
+      "max": "1",
+      "time": "300000",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "36",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Await Message Call Action"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "6",
+      "storage": "1",
+      "varName2": "author-titel",
+      "name": "Store Member Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**Bitte Warten...**",
+      "storage": "1",
+      "varName2": "wait",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "1",
+      "varName": "author-titel",
+      "emoji": "4",
+      "varName2": "✅",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "author-titel",
+      "emoji": "4",
+      "varName2": "❌",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "author-titel",
+      "emoji": "4",
+      "varName2": "💬",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "wait",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "author-titel",
+      "filter": "reaction.emoji.name === '✅' || reaction.emoji.name === '❌' || reaction.emoji.name === '💬' && user.id === '${tempVars(\"author-id\")}'",
+      "max": "1",
+      "time": "60000",
+      "maxEmojis": "",
+      "maxUsers": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "36",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Await Reaction Call Action"
+    },
+    {
+      "message": "1",
+      "varName": "author-titel",
+      "info": "1",
+      "find": "✅",
+      "storage": "1",
+      "varName2": "reac-titel-ok",
+      "name": "Find Reaction"
+    },
+    {
+      "message": "1",
+      "varName": "author-titel",
+      "info": "1",
+      "find": "❌",
+      "storage": "1",
+      "varName2": "reac-titel-abord",
+      "name": "Find Reaction"
+    },
+    {
+      "message": "1",
+      "varName": "author-titel",
+      "info": "1",
+      "find": "💬",
+      "storage": "1",
+      "varName2": "reac-titel-edit",
+      "name": "Find Reaction"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "reaction": "1",
+      "varName2": "reac-titel-ok",
+      "iftrue": "2",
+      "iftrueVal": "67",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If User Reacted"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "reaction": "1",
+      "varName2": "reac-titel-abord",
+      "iftrue": "2",
+      "iftrueVal": "63",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If User Reacted"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "reaction": "1",
+      "varName2": "reac-titel-edit",
+      "iftrue": "2",
+      "iftrueVal": "42",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check If User Reacted"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "author-titel",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-titel-send",
+      "name": "Delete Message"
+    },
+    {
+      "call": "36",
+      "name": "Jump to Action"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "author-titel",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-titel-send",
+      "name": "Delete Message"
+    },
+    {
+      "count": "3",
+      "name": "Skip Actions"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-content-send",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "author-content",
+      "name": "Delete Message"
+    },
+    {
+      "title": "📢 **__SCHRITT 2: Gewinnspiel Beschreibung__**",
+      "author": "",
+      "color": "00ff00",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "gws-embed-content",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-content",
+      "message": "Wenn du möchtest, gebe hier nun eine Beschreibung des Gewinnspiels an. Zum Beispiel Teilnahmebedingungen etc. pp. Was dir halt einfällt wo du der Meinung bist das man es braucht.\n\nWenn du keine eingeben möchtest, so antworte bitte nur mit **__no content__**\n```Nach deiner Eingabe werden 3 Reaktionen/Emoji unter deiner Eingabe platziert. Was es damit auf sich hat siehe unten.```",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-content",
+      "message": "✅ Bestätigen • ❌ Abbrechen • 💬 Bearbeiten",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-content",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "gws-embed-content-send",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "filter": "content.length > 0 && author.id === '${tempVars(\"author-id\")}'",
+      "max": "1",
+      "time": "300000",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "36",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Await Message Call Action"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "6",
+      "storage": "1",
+      "varName2": "author-content",
+      "name": "Store Member Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**Bitte Warten...**",
+      "storage": "1",
+      "varName2": "wait",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "1",
+      "varName": "author-content",
+      "emoji": "4",
+      "varName2": "✅",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "author-content",
+      "emoji": "4",
+      "varName2": "❌",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "author-content",
+      "emoji": "4",
+      "varName2": "💬",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "wait",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "author-content",
+      "filter": "reaction.emoji.name === '✅' || reaction.emoji.name === '❌' || reaction.emoji.name === '💬' && user.id === '${tempVars(\"author-id\")}'",
+      "max": "1",
+      "time": "60000",
+      "maxEmojis": "",
+      "maxUsers": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "36",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Await Reaction Call Action"
+    },
+    {
+      "message": "1",
+      "varName": "author-content",
+      "info": "1",
+      "find": "✅",
+      "storage": "1",
+      "varName2": "reac-content-ok",
+      "name": "Find Reaction"
+    },
+    {
+      "message": "1",
+      "varName": "author-content",
+      "info": "1",
+      "find": "❌",
+      "storage": "1",
+      "varName2": "reac-content-abord",
+      "name": "Find Reaction"
+    },
+    {
+      "message": "1",
+      "varName": "author-content",
+      "info": "1",
+      "find": "💬",
+      "storage": "1",
+      "varName2": "reac-content-edit",
+      "name": "Find Reaction"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "reaction": "1",
+      "varName2": "reac-content-ok",
+      "iftrue": "2",
+      "iftrueVal": "96",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If User Reacted"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "reaction": "1",
+      "varName2": "reac-content-abord",
+      "iftrue": "2",
+      "iftrueVal": "92",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If User Reacted"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "reaction": "1",
+      "varName2": "reac-content-edit",
+      "iftrue": "2",
+      "iftrueVal": "71",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check If User Reacted"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-content-send",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "author-content",
+      "name": "Delete Message"
+    },
+    {
+      "call": "36",
+      "name": "Jump to Action"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "author-content",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-content-send",
+      "name": "Delete Message"
+    },
+    {
+      "count": "3",
+      "name": "Skip Actions"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-sponsor-send",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "author-sponsor",
+      "name": "Delete Message"
+    },
+    {
+      "title": "📢 **__SCHRITT 3: Sponsor Angabe__**",
+      "author": "",
+      "color": "00ff00",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "gws-embed-sponsor",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-sponsor",
+      "message": "Wenn du möchtest kannst du hier nun einen Sponsor angeben. Erwähne entweder einen User oder benenne eine Firma etc. pp.\n\nWenn du keinen angeben möchtest, so antworte bitte nur mit **__no sponsor__**\n```Nach deiner Eingabe werden 3 Reaktionen/Emoji unter deiner Eingabe platziert. Was es damit auf sich hat siehe unten.```",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-sponsor",
+      "message": "✅ Bestätigen • ❌ Abbrechen • 💬 Bearbeiten",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-sponsor",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "gws-embed-sponsor-send",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "filter": "content.length > 0 && author.id === '${tempVars(\"author-id\")}'",
+      "max": "1",
+      "time": "300000",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "36",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Await Message Call Action"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "6",
+      "storage": "1",
+      "varName2": "author-sponsor",
+      "name": "Store Member Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**Bitte Warten...**",
+      "storage": "1",
+      "varName2": "wait",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "1",
+      "varName": "author-sponsor",
+      "emoji": "4",
+      "varName2": "✅",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "author-sponsor",
+      "emoji": "4",
+      "varName2": "❌",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "author-sponsor",
+      "emoji": "4",
+      "varName2": "💬",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "wait",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "author-sponsor",
+      "filter": "reaction.emoji.name === '✅' || reaction.emoji.name === '❌' || reaction.emoji.name === '💬' && user.id === '${tempVars(\"author-id\")}'",
+      "max": "1",
+      "time": "60000",
+      "maxEmojis": "",
+      "maxUsers": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "36",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Await Reaction Call Action"
+    },
+    {
+      "message": "1",
+      "varName": "author-sponsor",
+      "info": "1",
+      "find": "✅",
+      "storage": "1",
+      "varName2": "reac-sponsor-ok",
+      "name": "Find Reaction"
+    },
+    {
+      "message": "1",
+      "varName": "author-sponsor",
+      "info": "1",
+      "find": "❌",
+      "storage": "1",
+      "varName2": "reac-sponsor-abord",
+      "name": "Find Reaction"
+    },
+    {
+      "message": "1",
+      "varName": "author-sponsor",
+      "info": "1",
+      "find": "💬",
+      "storage": "1",
+      "varName2": "reac-sponsor-edit",
+      "name": "Find Reaction"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "reaction": "1",
+      "varName2": "reac-sponsor-ok",
+      "iftrue": "2",
+      "iftrueVal": "125",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If User Reacted"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "reaction": "1",
+      "varName2": "reac-sponsor-abord",
+      "iftrue": "2",
+      "iftrueVal": "121",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If User Reacted"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "reaction": "1",
+      "varName2": "reac-sponsor-edit",
+      "iftrue": "2",
+      "iftrueVal": "100",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check If User Reacted"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-sponsor-send",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "author-sponsor",
+      "name": "Delete Message"
+    },
+    {
+      "call": "36",
+      "name": "Jump to Action"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "author-sponsor",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-sponsor-send",
+      "name": "Delete Message"
+    },
+    {
+      "count": "3",
+      "name": "Skip Actions"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-grafik-send",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "author-grafikurl",
+      "name": "Delete Message"
+    },
+    {
+      "title": "📢 **__SCHRITT 4: Grafik Angabe__**",
+      "author": "",
+      "color": "00ff00",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "gws-embed-grafik",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-grafik",
+      "message": "Wenn du möchtest kannst du hier nun eine Grafik URL Angeben, um dein Gewinnspiel etwas zu Promoten.\nBitte achte darauf das deine Grafik URL mit **__.jpg__** oder **__.png__** od. **__.gif__** endet.\nBeispiel: <http://DEINE-WEBADRESSE-HIER.de/GRAFIK-HIER.jpg>\n\nWenn du keine verwenden möchtest, so antworte bitte nur mit **__no grafik__**\n```Nach deiner Eingabe werden 3 Reaktionen/Emoji unter deiner Eingabe platziert. Was es damit auf sich hat siehe unten.```",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-grafik",
+      "message": "✅ Bestätigen • ❌ Abbrechen • 💬 Bearbeiten",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-grafik",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "gws-embed-grafik-send",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "filter": "content.length > 0 && author.id === '${tempVars(\"author-id\")}'",
+      "max": "1",
+      "time": "300000",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "36",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Await Message Call Action"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "6",
+      "storage": "1",
+      "varName2": "author-grafikurl",
+      "name": "Store Member Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**Bitte Warten...**",
+      "storage": "1",
+      "varName2": "wait",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "1",
+      "varName": "author-grafikurl",
+      "emoji": "4",
+      "varName2": "✅",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "author-grafikurl",
+      "emoji": "4",
+      "varName2": "❌",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "author-grafikurl",
+      "emoji": "4",
+      "varName2": "💬",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "wait",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "author-grafikurl",
+      "filter": "reaction.emoji.name === '✅' || reaction.emoji.name === '❌' || reaction.emoji.name === '💬' && user.id === '${tempVars(\"author-id\")}'",
+      "max": "1",
+      "time": "60000",
+      "maxEmojis": "",
+      "maxUsers": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "36",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Await Reaction Call Action"
+    },
+    {
+      "message": "1",
+      "varName": "author-grafikurl",
+      "info": "1",
+      "find": "✅",
+      "storage": "1",
+      "varName2": "reac-grafik-ok",
+      "name": "Find Reaction"
+    },
+    {
+      "message": "1",
+      "varName": "author-grafikurl",
+      "info": "1",
+      "find": "❌",
+      "storage": "1",
+      "varName2": "reac-grafik-abord",
+      "name": "Find Reaction"
+    },
+    {
+      "message": "1",
+      "varName": "author-grafikurl",
+      "info": "1",
+      "find": "💬",
+      "storage": "1",
+      "varName2": "reac-grafik-edit",
+      "name": "Find Reaction"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "reaction": "1",
+      "varName2": "reac-grafik-ok",
+      "iftrue": "2",
+      "iftrueVal": "154",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If User Reacted"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "reaction": "1",
+      "varName2": "reac-grafik-abord",
+      "iftrue": "2",
+      "iftrueVal": "150",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If User Reacted"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "reaction": "1",
+      "varName2": "reac-grafik-edit",
+      "iftrue": "2",
+      "iftrueVal": "129",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check If User Reacted"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-grafik-send",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "author-grafikurl",
+      "name": "Delete Message"
+    },
+    {
+      "call": "36",
+      "name": "Jump to Action"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "author-grafikurl",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-grafik-send",
+      "name": "Delete Message"
+    },
+    {
+      "count": "3",
+      "name": "Skip Actions"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-zeit-send",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "author-zeitangabe",
+      "name": "Delete Message"
+    },
+    {
+      "title": "📢 **__SCHRITT 5: Gewinnspiel Dauer__**",
+      "author": "",
+      "color": "00ff00",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "gws-embed-zeit",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-zeit",
+      "message": "Gebe hier nun die gewünschte Dauer deines Gewinnspiels ein. Gebe die Dauert bitte in **Stunden** an\n\nBeispiele: 24 = 1 Tag | 48 = 2 Tage | 72 = 3 Tage | 168 Stunden = 1 Woche \nZur Hilfe verwende sonst auch [diesen Zeit Umrechner]( https://www.umrechnung.org/zeit-einheiten-umrechnen/wochen-tage-minuten-sekunden-umrechnen.htm)\n```Nach deiner Eingabe werden 3 Reaktionen unter deiner Eingabe platziert. Was es damit auf sich hat siehe unten.```\n",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-zeit",
+      "message": "✅ Bestätigen • ❌ Abbrechen • 💬 Bearbeiten",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-zeit",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "gws-embed-zeit-send",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "filter": "content.length > 0 && author.id === '${tempVars(\"author-id\")}'",
+      "max": "1",
+      "time": "300000",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "36",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Await Message Call Action"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "6",
+      "storage": "1",
+      "varName2": "author-zeitangabe",
+      "name": "Store Member Info"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "parseInt(tempVars(\"author-zeitangabe\"))",
+      "storage": "1",
+      "varName": "failnumber",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "failnumber",
+      "comparison": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "185",
+      "name": "Check Variable Type"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**Bite Warten....**",
+      "storage": "1",
+      "varName2": "wait",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "1",
+      "varName": "author-zeitangabe",
+      "emoji": "4",
+      "varName2": "✅",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "author-zeitangabe",
+      "emoji": "4",
+      "varName2": "❌",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "author-zeitangabe",
+      "emoji": "4",
+      "varName2": "💬",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "wait",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "author-zeitangabe",
+      "filter": "reaction.emoji.name === '✅' || reaction.emoji.name === '❌' || reaction.emoji.name === '💬' && user.id === '${tempVars(\"author-id\")}'",
+      "max": "1",
+      "time": "60000",
+      "maxEmojis": "",
+      "maxUsers": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "36",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Await Reaction Call Action"
+    },
+    {
+      "message": "1",
+      "varName": "author-zeitangabe",
+      "info": "1",
+      "find": "✅",
+      "storage": "1",
+      "varName2": "reac-zeit-ok",
+      "name": "Find Reaction"
+    },
+    {
+      "message": "1",
+      "varName": "author-zeitangabe",
+      "info": "1",
+      "find": "❌",
+      "storage": "1",
+      "varName2": "reac-zeit-abord",
+      "name": "Find Reaction"
+    },
+    {
+      "message": "1",
+      "varName": "author-zeitangabe",
+      "info": "1",
+      "find": "💬",
+      "storage": "1",
+      "varName2": "reac-zeit-edit",
+      "name": "Find Reaction"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "reaction": "1",
+      "varName2": "reac-zeit-ok",
+      "iftrue": "2",
+      "iftrueVal": "192",
+      "iffalse": "0",
+      "iffalseVal": "1",
+      "name": "Check If User Reacted"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "reaction": "1",
+      "varName2": "reac-zeit-abord",
+      "iftrue": "2",
+      "iftrueVal": "181",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If User Reacted"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "reaction": "1",
+      "varName2": "reac-zeit-edit",
+      "iftrue": "2",
+      "iftrueVal": "158",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check If User Reacted"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-zeit-send",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "author-zeitangabe",
+      "name": "Delete Message"
+    },
+    {
+      "call": "36",
+      "name": "Jump to Action"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-zeit-send",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "author-zeitangabe",
+      "name": "Delete Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Deine Eingabe __**${tempVars(\"author-zeitangabe\")}**__ ist keine Zahl!!\nBitte mache deine Eingabe in **3 Sekunden** erneut!",
+      "storage": "1",
+      "varName2": "author-failtime",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "3",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "author-failtime",
+      "name": "Delete Message"
+    },
+    {
+      "call": "160",
+      "name": "Jump to Action"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "author-zeitangabe",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-zeit-send",
+      "name": "Delete Message"
+    },
+    {
+      "count": "3",
+      "name": "Skip Actions"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-channel-send",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "author-channel",
+      "name": "Delete Message"
+    },
+    {
+      "title": "📢 **__SCHRITT 6: Gewinnspiel Channel__**",
+      "author": "",
+      "color": "00ff00",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "gws-embed-channel",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-channel",
+      "message": "Gebe hier nun deinen Gewünschten Channel ein wo das Gewinnspiel stattfinden soll.\n\nBeispiel: #gewinnspiele\n\n```Nach deiner Eingabe werden 3 Reaktionen unter deiner Eingabe platziert. Was es damit auf sich hat siehe unten.```",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-channel",
+      "message": "✅ Bestätigen • ❌ Abbrechen • 💬 Bearbeiten",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-channel",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "gws-embed-channel-send",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "filter": "content.length > 0 && author.id === '${tempVars(\"author-id\")}'",
+      "max": "1",
+      "time": "300000",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "36",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Await Message Call Action"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "6",
+      "storage": "1",
+      "varName2": "author-channel",
+      "name": "Store Member Info"
+    },
+    {
+      "message": "1",
+      "varName": "author-channel",
+      "info": "5",
+      "ParamN": "1",
+      "separator": "",
+      "storage": "1",
+      "varName2": "gws-channel-start",
+      "name": "Store Message Params"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-channel-start",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "223",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**Bite Warten....**",
+      "storage": "1",
+      "varName2": "wait",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "1",
+      "varName": "author-channel",
+      "emoji": "4",
+      "varName2": "✅",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "author-channel",
+      "emoji": "4",
+      "varName2": "❌",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "author-channel",
+      "emoji": "4",
+      "varName2": "💬",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "wait",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "author-channel",
+      "filter": "reaction.emoji.name === '✅' || reaction.emoji.name === '❌' || reaction.emoji.name === '💬' && user.id === '${tempVars(\"author-id\")}'",
+      "max": "1",
+      "time": "60000",
+      "maxEmojis": "",
+      "maxUsers": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "36",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Await Reaction Call Action"
+    },
+    {
+      "message": "1",
+      "varName": "author-channel",
+      "info": "1",
+      "find": "✅",
+      "storage": "1",
+      "varName2": "reac-channel-ok",
+      "name": "Find Reaction"
+    },
+    {
+      "message": "1",
+      "varName": "author-channel",
+      "info": "1",
+      "find": "❌",
+      "storage": "1",
+      "varName2": "reac-channel-abord",
+      "name": "Find Reaction"
+    },
+    {
+      "message": "1",
+      "varName": "author-channel",
+      "info": "1",
+      "find": "💬",
+      "storage": "1",
+      "varName2": "reac-channel-edit",
+      "name": "Find Reaction"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "reaction": "1",
+      "varName2": "reac-channel-ok",
+      "iftrue": "2",
+      "iftrueVal": "232",
+      "iffalse": "0",
+      "iffalseVal": "1",
+      "name": "Check If User Reacted"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "reaction": "1",
+      "varName2": "reac-channel-abord",
+      "iftrue": "2",
+      "iftrueVal": "219",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If User Reacted"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "reaction": "1",
+      "varName2": "reac-channel-edit",
+      "iftrue": "2",
+      "iftrueVal": "196",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check If User Reacted"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-channel-send",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "author-channel",
+      "name": "Delete Message"
+    },
+    {
+      "call": "36",
+      "name": "Jump to Action"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-channel-send",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "author-channel",
+      "name": "Delete Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Deine Eingabe __**${tempVars(\"author-channel\")}**__ ist Falsch!\nDu musst einen Channel mit **#** Erwähnen\n\nBitte mache deine Eingabe in **5 Sekunden** erneut!",
+      "storage": "1",
+      "varName2": "author-failchannel",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "5",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "author-failchannel",
+      "name": "Delete Message"
+    },
+    {
+      "call": "198",
+      "name": "Jump to Action"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "COPYRIGHT BY THALIRUTH#9938 - DBM@THALIRUTH.DE",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "author-content",
+      "comparison": "1",
+      "value": "\"no content\"",
+      "iftrue": "2",
+      "iftrueVal": "242",
+      "iffalse": "2",
+      "iffalseVal": "236",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "author-content",
+      "comparison": "1",
+      "value": "\"no content\"",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "author-grafikurl",
+      "comparison": "1",
+      "value": "\"no grafik\"",
+      "iftrue": "2",
+      "iftrueVal": "292",
+      "iffalse": "2",
+      "iffalseVal": "433",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "author-content",
+      "comparison": "1",
+      "value": "\"no content\"",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "author-sponsor",
+      "comparison": "1",
+      "value": "\"no sponsor\"",
+      "iftrue": "2",
+      "iftrueVal": "243",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "author-grafikurl",
+      "comparison": "1",
+      "value": "\"no grafik\"",
+      "iftrue": "2",
+      "iftrueVal": "574",
+      "iffalse": "2",
+      "iffalseVal": "245",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "author-content",
+      "comparison": "1",
+      "value": "\"no content\"",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "author-sponsor",
+      "comparison": "1",
+      "value": "\"no sponsor\"",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "author-grafikurl",
+      "comparison": "1",
+      "value": "\"no grafik\"",
+      "iftrue": "2",
+      "iftrueVal": "527",
+      "iffalse": "2",
+      "iffalseVal": "386",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "author-content",
+      "comparison": "1",
+      "value": "\"no content\"",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "author-sponsor",
+      "comparison": "1",
+      "value": "\"no sponsor\"",
+      "iftrue": "2",
+      "iftrueVal": "234",
+      "iffalse": "2",
+      "iffalseVal": "240",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "author-grafikurl",
+      "comparison": "1",
+      "value": "\"no grafik\"",
+      "iftrue": "2",
+      "iftrueVal": "339",
+      "iffalse": "2",
+      "iffalseVal": "480",
+      "name": "Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "author-channel",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-channel-send",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "name": "Create List"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "comparison": "5",
+      "value": "member",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "addType": "0",
+      "position": "",
+      "value": "member",
+      "name": "Add Item to List"
+    },
+    {
+      "time": "${tempVars(\"author-zeitangabe\")}",
+      "convertFrom": "3",
+      "convertTo": "2",
+      "storage": "1",
+      "varName": "gws-minuten",
+      "name": "Convert Time"
+    },
+    {
+      "changeType": "0",
+      "value": "${tempVars(\"gws-minuten\")}",
+      "storage": "1",
+      "varName": "timer",
+      "name": "Control Variable"
+    },
+    {
+      "title": "🎁 __**GEWINNSPIEL**__ 🎁",
+      "author": "",
+      "color": "RANDOM",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "${tempVars(\"author-grafikurl\")}",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "${tempVars(\"lmsg\")}",
+      "minute": "${tempVars(\"timem\")}",
+      "second": "${tempVars(\"timesec\")}",
+      "storage": "1",
+      "varName": "embed-time-start",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-start",
+      "message": "Zu Gewinnen gibt es: \n```${tempVars(\"author-titel\")}```\nWeitere Informationen zum Gewinnspiel:\n```${tempVars(\"author-content\")}```\nGewinnspiel Endet in **${tempVars(\"timer\")}** Minuten\n```Der Counter wird alle 5 Minuten Aktualisiert```\n**__Sponsored by:__** ${tempVars(\"author-sponsor\")}\n",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-start",
+      "message": "Klicke unten auf das 🎁 um Teilzunehmen!",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-start",
+      "channel": "5",
+      "varName2": "gws-channel-start",
+      "storage3": "1",
+      "varName3": "sentmessage",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "sentmessage",
+      "emoji": "4",
+      "varName2": "🎁",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "changeType": "0",
+      "value": "0",
+      "storage": "1",
+      "varName": "timeout",
+      "name": "Control Variable"
+    },
+    {
+      "time": "1",
+      "measurement": "2",
+      "name": "Wait"
+    },
+    {
+      "message": "1",
+      "varName": "sentmessage",
+      "info": "1",
+      "find": "🎁",
+      "storage": "1",
+      "varName2": "eingeschenk",
+      "name": "Find Reaction"
+    },
+    {
+      "reaction": "1",
+      "varName": "eingeschenk",
+      "info": "7",
+      "storage": "1",
+      "varName2": "lastreact",
+      "name": "Store Reaction Info"
+    },
+    {
+      "reaction": "1",
+      "varName": "eingeschenk",
+      "info": "2",
+      "storage": "3",
+      "varName2": "reaclist",
+      "name": "Store Reaction Info"
+    },
+    {
+      "storage": "3",
+      "varName": "reaclist",
+      "name": "Save Variable"
+    },
+    {
+      "member": "2",
+      "varName": "lastreact",
+      "info": "2",
+      "storage": "1",
+      "varName2": "lastreactusername",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "timer",
+      "comparison": "3",
+      "value": "1",
+      "iftrue": "2",
+      "iftrueVal": "275",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "timeout",
+      "comparison": "4",
+      "value": "0",
+      "iftrue": "3",
+      "iftrueVal": "4",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "title": "🎁 __**GEWINNSPIEL**__ 🎁",
+      "author": "",
+      "color": "RANDOM",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "${tempVars(\"author-grafikurl\")}",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed-time-edit",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-edit",
+      "message": "Zu Gewinnen gibt es: \n```${tempVars(\"author-titel\")}```\nWeitere Informationen zum Gewinnspiel:\n```${tempVars(\"author-content\")}```\nGewinnspiel Endet in **${tempVars(\"timer\")}** Minuten\n```Der Counter wird alle 5 Minuten Aktualisiert```\n**__Sponsored by:__** ${tempVars(\"author-sponsor\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-edit",
+      "message": "Klicke unten auf das 🎁 um Teilzunehmen!",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "sentmessage",
+      "storage2": "1",
+      "varName2": "embed-time-edit",
+      "name": "Edit Embed"
+    },
+    {
+      "changeType": "1",
+      "value": "1",
+      "storage": "1",
+      "varName": "timeout",
+      "name": "Control Variable"
+    },
+    {
+      "changeType": "0",
+      "value": "${tempVars(\"timer\")-1}",
+      "storage": "1",
+      "varName": "timer",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "timeout",
+      "comparison": "4",
+      "value": "4",
+      "iftrue": "2",
+      "iftrueVal": "259",
+      "iffalse": "2",
+      "iffalseVal": "260",
+      "name": "Check Variable"
+    },
+    {
+      "list": "9",
+      "varName": "reaclist",
+      "getType": "2",
+      "position": "",
+      "storage": "1",
+      "varName2": "gws-gewinner",
+      "name": "Get Item from List"
+    },
+    {
+      "member": "2",
+      "varName": "gws-gewinner",
+      "info": "0",
+      "varName2": "",
+      "iftrue": "2",
+      "iftrueVal": "275",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "list": "9",
+      "varName": "keylist",
+      "getType": "2",
+      "position": "",
+      "storage": "1",
+      "varName2": "spielekey",
+      "name": "Get Item from List"
+    },
+    {
+      "info": "3",
+      "find": "${tempVars(\"gws-gewinner\")}",
+      "storage": "1",
+      "varName": "gws-username",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "channel": "5",
+      "varName": "gws-gewinner",
+      "message": "Hallo ${tempVars(\"gws-gewinner\")},\nich bin heute deine Glücksfee, denn du hattest bei unserem Aktuellem Gewinnspiel Gewonnen.\nHier sind nun die weiteren Details dazu.\n\n**Hier ist nun dein Preis:**\n```${tempVars(\"spielekey\")}```",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "5",
+      "varName": "gws-channel-start",
+      "message": "💖 Glückwunsch ${tempVars(\"gws-gewinner\")}",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "title": "🎁 __**GEWINNSPIEL BEENDET**__ 🎁",
+      "author": "",
+      "color": "ff0000",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "${tempVars(\"author-grafikurl\")}",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "333",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "333",
+      "message": "Du hast bei unserem Gewinnspiel gewonmnen!\nPrüfe gleich schnell deine __Privaten Nachrichten,__ dort solltest du nun weitere Informationen zu deinem Preis vorfinden.\nGanz viel Spaß wünsche ich dir mit deinem Preis! __**${tempVars(\"author-titel\")}**__",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "333",
+      "channel": "5",
+      "varName2": "gws-channel-start",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "sentmessage",
+      "name": "Delete Message"
+    },
+    {
+      "list": "9",
+      "varName": "keylist",
+      "item": "${tempVars(\"spielekey\")}",
+      "storage": "1",
+      "varName2": "spielkey-remove",
+      "name": "Find Item in List"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "removeType": "2",
+      "position": "${tempVars(\"spielkey-remove\")}",
+      "storage2": "0",
+      "varName2": "keylist",
+      "name": "Remove Item from List"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "name": "Save Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "removeType": "1",
+      "position": "",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Remove Item from List"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "COPYRIGHT BY THALIRUTH#9938 - DBM@THALIRUTH.DE",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "author-channel",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-channel-send",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "name": "Create List"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "comparison": "5",
+      "value": "member",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "addType": "0",
+      "position": "",
+      "value": "member",
+      "name": "Add Item to List"
+    },
+    {
+      "time": "${tempVars(\"author-zeitangabe\")}",
+      "convertFrom": "3",
+      "convertTo": "2",
+      "storage": "1",
+      "varName": "gws-minuten",
+      "name": "Convert Time"
+    },
+    {
+      "changeType": "0",
+      "value": "${tempVars(\"gws-minuten\")}",
+      "storage": "1",
+      "varName": "timer",
+      "name": "Control Variable"
+    },
+    {
+      "title": "🎁 __**GEWINNSPIEL**__ 🎁",
+      "author": "",
+      "color": "RANDOM",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "${tempVars(\"lmsg\")}",
+      "minute": "${tempVars(\"timem\")}",
+      "second": "${tempVars(\"timesec\")}",
+      "storage": "1",
+      "varName": "embed-time-start",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-start",
+      "message": "Zu Gewinnen gibt es: \n```${tempVars(\"author-titel\")}```\nGewinnspiel Endet in **${tempVars(\"timer\")}** Minuten\n```Der Counter wird alle 5 Minuten Aktualisiert```\n",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-start",
+      "message": "Klicke unten auf das 🎁 um Teilzunehmen!",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-start",
+      "channel": "5",
+      "varName2": "gws-channel-start",
+      "storage3": "1",
+      "varName3": "sentmessage",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "sentmessage",
+      "emoji": "4",
+      "varName2": "🎁",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "changeType": "0",
+      "value": "0",
+      "storage": "1",
+      "varName": "timeout",
+      "name": "Control Variable"
+    },
+    {
+      "time": "1",
+      "measurement": "2",
+      "name": "Wait"
+    },
+    {
+      "message": "1",
+      "varName": "sentmessage",
+      "info": "1",
+      "find": "🎁",
+      "storage": "1",
+      "varName2": "eingeschenk",
+      "name": "Find Reaction"
+    },
+    {
+      "reaction": "1",
+      "varName": "eingeschenk",
+      "info": "7",
+      "storage": "1",
+      "varName2": "lastreact",
+      "name": "Store Reaction Info"
+    },
+    {
+      "reaction": "1",
+      "varName": "eingeschenk",
+      "info": "2",
+      "storage": "3",
+      "varName2": "reaclist",
+      "name": "Store Reaction Info"
+    },
+    {
+      "storage": "3",
+      "varName": "reaclist",
+      "name": "Save Variable"
+    },
+    {
+      "member": "2",
+      "varName": "lastreact",
+      "info": "2",
+      "storage": "1",
+      "varName2": "lastreactusername",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "timer",
+      "comparison": "3",
+      "value": "1",
+      "iftrue": "2",
+      "iftrueVal": "322",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "timeout",
+      "comparison": "4",
+      "value": "0",
+      "iftrue": "3",
+      "iftrueVal": "4",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "title": "🎁 __**GEWINNSPIEL**__ 🎁",
+      "author": "",
+      "color": "RANDOM",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed-time-edit",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-edit",
+      "message": "Zu Gewinnen gibt es: \n```${tempVars(\"author-titel\")}```\nGewinnspiel Endet in **${tempVars(\"timer\")}** Minuten\n```Der Counter wird alle 5 Minuten Aktualisiert```",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-edit",
+      "message": "Klicke unten auf das 🎁 um Teilzunehmen!",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "sentmessage",
+      "storage2": "1",
+      "varName2": "embed-time-edit",
+      "name": "Edit Embed"
+    },
+    {
+      "changeType": "1",
+      "value": "1",
+      "storage": "1",
+      "varName": "timeout",
+      "name": "Control Variable"
+    },
+    {
+      "changeType": "0",
+      "value": "${tempVars(\"timer\")-1}",
+      "storage": "1",
+      "varName": "timer",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "timeout",
+      "comparison": "4",
+      "value": "4",
+      "iftrue": "2",
+      "iftrueVal": "306",
+      "iffalse": "2",
+      "iffalseVal": "307",
+      "name": "Check Variable"
+    },
+    {
+      "list": "9",
+      "varName": "reaclist",
+      "getType": "2",
+      "position": "",
+      "storage": "1",
+      "varName2": "gws-gewinner",
+      "name": "Get Item from List"
+    },
+    {
+      "member": "2",
+      "varName": "gws-gewinner",
+      "info": "0",
+      "varName2": "",
+      "iftrue": "2",
+      "iftrueVal": "322",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "list": "9",
+      "varName": "keylist",
+      "getType": "2",
+      "position": "",
+      "storage": "1",
+      "varName2": "spielekey",
+      "name": "Get Item from List"
+    },
+    {
+      "info": "3",
+      "find": "${tempVars(\"gws-gewinner\")}",
+      "storage": "1",
+      "varName": "gws-username",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "channel": "5",
+      "varName": "gws-gewinner",
+      "message": "Hallo ${tempVars(\"gws-gewinner\")},\nich bin heute deine Glücksfee, denn du hattest bei unserem Aktuellem Gewinnspiel Gewonnen.\nHier sind nun die weiteren Details dazu.\n\n**Hier ist nun dein Preis:**\n```${tempVars(\"spielekey\")}```",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "5",
+      "varName": "gws-channel-start",
+      "message": "💖 Glückwunsch ${tempVars(\"gws-gewinner\")}",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "title": "🎁 __**GEWINNSPIEL BEENDET**__ 🎁",
+      "author": "",
+      "color": "ff0000",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "333",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "333",
+      "message": "Du hast bei unserem Gewinnspiel gewonmnen!\nPrüfe gleich schnell deine __Privaten Nachrichten,__ dort solltest du nun weitere Informationen zu deinem Preis vorfinden.\nGanz viel Spaß wünsche ich dir mit deinem Preis! __**${tempVars(\"author-titel\")}**__",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "333",
+      "channel": "5",
+      "varName2": "gws-channel-start",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "sentmessage",
+      "name": "Delete Message"
+    },
+    {
+      "list": "9",
+      "varName": "keylist",
+      "item": "${tempVars(\"spielekey\")}",
+      "storage": "1",
+      "varName2": "spielkey-remove",
+      "name": "Find Item in List"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "removeType": "2",
+      "position": "${tempVars(\"spielkey-remove\")}",
+      "storage2": "0",
+      "varName2": "keylist",
+      "name": "Remove Item from List"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "name": "Save Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "removeType": "1",
+      "position": "",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Remove Item from List"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "COPYRIGHT BY THALIRUTH#9938 - DBM@THALIRUTH.DE",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "author-channel",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-channel-send",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "name": "Create List"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "comparison": "5",
+      "value": "member",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "addType": "0",
+      "position": "",
+      "value": "member",
+      "name": "Add Item to List"
+    },
+    {
+      "time": "${tempVars(\"author-zeitangabe\")}",
+      "convertFrom": "3",
+      "convertTo": "2",
+      "storage": "1",
+      "varName": "gws-minuten",
+      "name": "Convert Time"
+    },
+    {
+      "changeType": "0",
+      "value": "${tempVars(\"gws-minuten\")}",
+      "storage": "1",
+      "varName": "timer",
+      "name": "Control Variable"
+    },
+    {
+      "title": "🎁 __**GEWINNSPIEL**__ 🎁",
+      "author": "",
+      "color": "RANDOM",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "${tempVars(\"lmsg\")}",
+      "minute": "${tempVars(\"timem\")}",
+      "second": "${tempVars(\"timesec\")}",
+      "storage": "1",
+      "varName": "embed-time-start",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-start",
+      "message": "Zu Gewinnen gibt es: \n```${tempVars(\"author-titel\")}```\nWeitere Informationen zum Gewinnspiel:\n```${tempVars(\"author-content\")}```\nGewinnspiel Endet in **${tempVars(\"timer\")}** Minuten\n```Der Counter wird alle 5 Minuten Aktualisiert```",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-start",
+      "message": "Klicke unten auf das 🎁 um Teilzunehmen!",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-start",
+      "channel": "5",
+      "varName2": "gws-channel-start",
+      "storage3": "1",
+      "varName3": "sentmessage",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "sentmessage",
+      "emoji": "4",
+      "varName2": "🎁",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "changeType": "0",
+      "value": "0",
+      "storage": "1",
+      "varName": "timeout",
+      "name": "Control Variable"
+    },
+    {
+      "time": "1",
+      "measurement": "2",
+      "name": "Wait"
+    },
+    {
+      "message": "1",
+      "varName": "sentmessage",
+      "info": "1",
+      "find": "🎁",
+      "storage": "1",
+      "varName2": "eingeschenk",
+      "name": "Find Reaction"
+    },
+    {
+      "reaction": "1",
+      "varName": "eingeschenk",
+      "info": "7",
+      "storage": "1",
+      "varName2": "lastreact",
+      "name": "Store Reaction Info"
+    },
+    {
+      "reaction": "1",
+      "varName": "eingeschenk",
+      "info": "2",
+      "storage": "3",
+      "varName2": "reaclist",
+      "name": "Store Reaction Info"
+    },
+    {
+      "storage": "3",
+      "varName": "reaclist",
+      "name": "Save Variable"
+    },
+    {
+      "member": "2",
+      "varName": "lastreact",
+      "info": "2",
+      "storage": "1",
+      "varName2": "lastreactusername",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "timer",
+      "comparison": "3",
+      "value": "1",
+      "iftrue": "2",
+      "iftrueVal": "369",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "timeout",
+      "comparison": "4",
+      "value": "0",
+      "iftrue": "3",
+      "iftrueVal": "4",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "title": "🎁 __**GEWINNSPIEL**__ 🎁",
+      "author": "",
+      "color": "RANDOM",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed-time-edit",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-edit",
+      "message": "Zu Gewinnen gibt es: \n```${tempVars(\"author-titel\")}```\nWeitere Informationen zum Gewinnspiel:\n```${tempVars(\"author-content\")}```\nGewinnspiel Endet in **${tempVars(\"timer\")}** Minuten\n```Der Counter wird alle 5 Minuten Aktualisiert```",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-edit",
+      "message": "Klicke unten auf das 🎁 um Teilzunehmen!",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "sentmessage",
+      "storage2": "1",
+      "varName2": "embed-time-edit",
+      "name": "Edit Embed"
+    },
+    {
+      "changeType": "1",
+      "value": "1",
+      "storage": "1",
+      "varName": "timeout",
+      "name": "Control Variable"
+    },
+    {
+      "changeType": "0",
+      "value": "${tempVars(\"timer\")-1}",
+      "storage": "1",
+      "varName": "timer",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "timeout",
+      "comparison": "4",
+      "value": "4",
+      "iftrue": "2",
+      "iftrueVal": "353",
+      "iffalse": "2",
+      "iffalseVal": "354",
+      "name": "Check Variable"
+    },
+    {
+      "list": "9",
+      "varName": "reaclist",
+      "getType": "2",
+      "position": "",
+      "storage": "1",
+      "varName2": "gws-gewinner",
+      "name": "Get Item from List"
+    },
+    {
+      "member": "2",
+      "varName": "gws-gewinner",
+      "info": "0",
+      "varName2": "",
+      "iftrue": "2",
+      "iftrueVal": "369",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "list": "9",
+      "varName": "keylist",
+      "getType": "2",
+      "position": "",
+      "storage": "1",
+      "varName2": "spielekey",
+      "name": "Get Item from List"
+    },
+    {
+      "info": "3",
+      "find": "${tempVars(\"gws-gewinner\")}",
+      "storage": "1",
+      "varName": "gws-username",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "channel": "5",
+      "varName": "gws-gewinner",
+      "message": "Hallo ${tempVars(\"gws-gewinner\")},\nich bin heute deine Glücksfee, denn du hattest bei unserem Aktuellem Gewinnspiel Gewonnen.\nHier sind nun die weiteren Details dazu.\n\n**Hier ist nun dein Preis:**\n```${tempVars(\"spielekey\")}```",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "5",
+      "varName": "gws-channel-start",
+      "message": "💖 Glückwunsch ${tempVars(\"gws-gewinner\")}",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "title": "🎁 __**GEWINNSPIEL BEENDET**__ 🎁",
+      "author": "",
+      "color": "ff0000",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "333",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "333",
+      "message": "Du hast bei unserem Gewinnspiel gewonmnen!\nPrüfe gleich schnell deine __Privaten Nachrichten,__ dort solltest du nun weitere Informationen zu deinem Preis vorfinden.\nGanz viel Spaß wünsche ich dir mit deinem Preis! __**${tempVars(\"author-titel\")}**__",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "333",
+      "channel": "5",
+      "varName2": "gws-channel-start",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "sentmessage",
+      "name": "Delete Message"
+    },
+    {
+      "list": "9",
+      "varName": "keylist",
+      "item": "${tempVars(\"spielekey\")}",
+      "storage": "1",
+      "varName2": "spielkey-remove",
+      "name": "Find Item in List"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "removeType": "2",
+      "position": "${tempVars(\"spielkey-remove\")}",
+      "storage2": "0",
+      "varName2": "keylist",
+      "name": "Remove Item from List"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "name": "Save Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "removeType": "1",
+      "position": "",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Remove Item from List"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "COPYRIGHT BY THALIRUTH#9938 - DBM@THALIRUTH.DE",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "author-channel",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-channel-send",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "name": "Create List"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "comparison": "5",
+      "value": "member",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "addType": "0",
+      "position": "",
+      "value": "member",
+      "name": "Add Item to List"
+    },
+    {
+      "time": "${tempVars(\"author-zeitangabe\")}",
+      "convertFrom": "3",
+      "convertTo": "2",
+      "storage": "1",
+      "varName": "gws-minuten",
+      "name": "Convert Time"
+    },
+    {
+      "changeType": "0",
+      "value": "${tempVars(\"gws-minuten\")}",
+      "storage": "1",
+      "varName": "timer",
+      "name": "Control Variable"
+    },
+    {
+      "title": "🎁 __**GEWINNSPIEL**__ 🎁",
+      "author": "",
+      "color": "RANDOM",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "${tempVars(\"author-grafikurl\")}",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "${tempVars(\"lmsg\")}",
+      "minute": "${tempVars(\"timem\")}",
+      "second": "${tempVars(\"timesec\")}",
+      "storage": "1",
+      "varName": "embed-time-start",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-start",
+      "message": "Zu Gewinnen gibt es: \n```${tempVars(\"author-titel\")}```\nGewinnspiel Endet in **${tempVars(\"timer\")}** Minuten\n```Der Counter wird alle 5 Minuten Aktualisiert```\n**__Sponsored by:__** ${tempVars(\"author-sponsor\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-start",
+      "message": "Klicke unten auf das 🎁 um Teilzunehmen!",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-start",
+      "channel": "5",
+      "varName2": "gws-channel-start",
+      "storage3": "1",
+      "varName3": "sentmessage",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "sentmessage",
+      "emoji": "4",
+      "varName2": "🎁",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "changeType": "0",
+      "value": "0",
+      "storage": "1",
+      "varName": "timeout",
+      "name": "Control Variable"
+    },
+    {
+      "time": "1",
+      "measurement": "2",
+      "name": "Wait"
+    },
+    {
+      "message": "1",
+      "varName": "sentmessage",
+      "info": "1",
+      "find": "🎁",
+      "storage": "1",
+      "varName2": "eingeschenk",
+      "name": "Find Reaction"
+    },
+    {
+      "reaction": "1",
+      "varName": "eingeschenk",
+      "info": "7",
+      "storage": "1",
+      "varName2": "lastreact",
+      "name": "Store Reaction Info"
+    },
+    {
+      "reaction": "1",
+      "varName": "eingeschenk",
+      "info": "2",
+      "storage": "3",
+      "varName2": "reaclist",
+      "name": "Store Reaction Info"
+    },
+    {
+      "storage": "3",
+      "varName": "reaclist",
+      "name": "Save Variable"
+    },
+    {
+      "member": "2",
+      "varName": "lastreact",
+      "info": "2",
+      "storage": "1",
+      "varName2": "lastreactusername",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "timer",
+      "comparison": "3",
+      "value": "1",
+      "iftrue": "2",
+      "iftrueVal": "416",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "timeout",
+      "comparison": "4",
+      "value": "0",
+      "iftrue": "3",
+      "iftrueVal": "4",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "title": "🎁 __**GEWINNSPIEL**__ 🎁",
+      "author": "",
+      "color": "RANDOM",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "${tempVars(\"author-grafikurl\")}",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed-time-edit",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-edit",
+      "message": "Zu Gewinnen gibt es: \n```${tempVars(\"author-titel\")}```\nGewinnspiel Endet in **${tempVars(\"timer\")}** Minuten\n```Der Counter wird alle 5 Minuten Aktualisiert```\n**__Sponsored by:__** ${tempVars(\"author-sponsor\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-edit",
+      "message": "Klicke unten auf das 🎁 um Teilzunehmen!",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "sentmessage",
+      "storage2": "1",
+      "varName2": "embed-time-edit",
+      "name": "Edit Embed"
+    },
+    {
+      "changeType": "1",
+      "value": "1",
+      "storage": "1",
+      "varName": "timeout",
+      "name": "Control Variable"
+    },
+    {
+      "changeType": "0",
+      "value": "${tempVars(\"timer\")-1}",
+      "storage": "1",
+      "varName": "timer",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "timeout",
+      "comparison": "4",
+      "value": "4",
+      "iftrue": "2",
+      "iftrueVal": "400",
+      "iffalse": "2",
+      "iffalseVal": "401",
+      "name": "Check Variable"
+    },
+    {
+      "list": "9",
+      "varName": "reaclist",
+      "getType": "2",
+      "position": "",
+      "storage": "1",
+      "varName2": "gws-gewinner",
+      "name": "Get Item from List"
+    },
+    {
+      "member": "2",
+      "varName": "gws-gewinner",
+      "info": "0",
+      "varName2": "",
+      "iftrue": "2",
+      "iftrueVal": "416",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "list": "9",
+      "varName": "keylist",
+      "getType": "2",
+      "position": "",
+      "storage": "1",
+      "varName2": "spielekey",
+      "name": "Get Item from List"
+    },
+    {
+      "info": "3",
+      "find": "${tempVars(\"gws-gewinner\")}",
+      "storage": "1",
+      "varName": "gws-username",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "channel": "5",
+      "varName": "gws-gewinner",
+      "message": "Hallo ${tempVars(\"gws-gewinner\")},\nich bin heute deine Glücksfee, denn du hattest bei unserem Aktuellem Gewinnspiel Gewonnen.\nHier sind nun die weiteren Details dazu.\n\n**Hier ist nun dein Preis:**\n```${tempVars(\"spielekey\")}```",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "5",
+      "varName": "gws-channel-start",
+      "message": "💖 Glückwunsch ${tempVars(\"gws-gewinner\")}",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "title": "🎁 __**GEWINNSPIEL BEENDET**__ 🎁",
+      "author": "",
+      "color": "ff0000",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "${tempVars(\"author-grafikurl\")}",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "333",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "333",
+      "message": "Du hast bei unserem Gewinnspiel gewonmnen!\nPrüfe gleich schnell deine __Privaten Nachrichten,__ dort solltest du nun weitere Informationen zu deinem Preis vorfinden.\nGanz viel Spaß wünsche ich dir mit deinem Preis! __**${tempVars(\"author-titel\")}**__",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "333",
+      "channel": "5",
+      "varName2": "gws-channel-start",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "sentmessage",
+      "name": "Delete Message"
+    },
+    {
+      "list": "9",
+      "varName": "keylist",
+      "item": "${tempVars(\"spielekey\")}",
+      "storage": "1",
+      "varName2": "spielkey-remove",
+      "name": "Find Item in List"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "removeType": "2",
+      "position": "${tempVars(\"spielkey-remove\")}",
+      "storage2": "0",
+      "varName2": "keylist",
+      "name": "Remove Item from List"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "name": "Save Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "removeType": "1",
+      "position": "",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Remove Item from List"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "COPYRIGHT BY THALIRUTH#9938 - DBM@THALIRUTH.DE",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "author-channel",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-channel-send",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "name": "Create List"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "comparison": "5",
+      "value": "member",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "addType": "0",
+      "position": "",
+      "value": "member",
+      "name": "Add Item to List"
+    },
+    {
+      "time": "${tempVars(\"author-zeitangabe\")}",
+      "convertFrom": "3",
+      "convertTo": "2",
+      "storage": "1",
+      "varName": "gws-minuten",
+      "name": "Convert Time"
+    },
+    {
+      "changeType": "0",
+      "value": "${tempVars(\"gws-minuten\")}",
+      "storage": "1",
+      "varName": "timer",
+      "name": "Control Variable"
+    },
+    {
+      "title": "🎁 __**GEWINNSPIEL**__ 🎁",
+      "author": "",
+      "color": "RANDOM",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "${tempVars(\"author-grafikurl\")}",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "${tempVars(\"lmsg\")}",
+      "minute": "${tempVars(\"timem\")}",
+      "second": "${tempVars(\"timesec\")}",
+      "storage": "1",
+      "varName": "embed-time-start",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-start",
+      "message": "Zu Gewinnen gibt es: \n```${tempVars(\"author-titel\")}```\nGewinnspiel Endet in **${tempVars(\"timer\")}** Minuten\n```Der Counter wird alle 5 Minuten Aktualisiert```\n",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-start",
+      "message": "Klicke unten auf das 🎁 um Teilzunehmen!",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-start",
+      "channel": "5",
+      "varName2": "gws-channel-start",
+      "storage3": "1",
+      "varName3": "sentmessage",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "sentmessage",
+      "emoji": "4",
+      "varName2": "🎁",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "changeType": "0",
+      "value": "0",
+      "storage": "1",
+      "varName": "timeout",
+      "name": "Control Variable"
+    },
+    {
+      "time": "1",
+      "measurement": "2",
+      "name": "Wait"
+    },
+    {
+      "message": "1",
+      "varName": "sentmessage",
+      "info": "1",
+      "find": "🎁",
+      "storage": "1",
+      "varName2": "eingeschenk",
+      "name": "Find Reaction"
+    },
+    {
+      "reaction": "1",
+      "varName": "eingeschenk",
+      "info": "7",
+      "storage": "1",
+      "varName2": "lastreact",
+      "name": "Store Reaction Info"
+    },
+    {
+      "reaction": "1",
+      "varName": "eingeschenk",
+      "info": "2",
+      "storage": "3",
+      "varName2": "reaclist",
+      "name": "Store Reaction Info"
+    },
+    {
+      "storage": "3",
+      "varName": "reaclist",
+      "name": "Save Variable"
+    },
+    {
+      "member": "2",
+      "varName": "lastreact",
+      "info": "2",
+      "storage": "1",
+      "varName2": "lastreactusername",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "timer",
+      "comparison": "3",
+      "value": "1",
+      "iftrue": "2",
+      "iftrueVal": "463",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "timeout",
+      "comparison": "4",
+      "value": "0",
+      "iftrue": "3",
+      "iftrueVal": "4",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "title": "🎁 __**GEWINNSPIEL**__ 🎁",
+      "author": "",
+      "color": "RANDOM",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "${tempVars(\"author-grafikurl\")}",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed-time-edit",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-edit",
+      "message": "Zu Gewinnen gibt es: \n```${tempVars(\"author-titel\")}```\nGewinnspiel Endet in **${tempVars(\"timer\")}** Minuten\n```Der Counter wird alle 5 Minuten Aktualisiert```",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-edit",
+      "message": "Klicke unten auf das 🎁 um Teilzunehmen!",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "sentmessage",
+      "storage2": "1",
+      "varName2": "embed-time-edit",
+      "name": "Edit Embed"
+    },
+    {
+      "changeType": "1",
+      "value": "1",
+      "storage": "1",
+      "varName": "timeout",
+      "name": "Control Variable"
+    },
+    {
+      "changeType": "0",
+      "value": "${tempVars(\"timer\")-1}",
+      "storage": "1",
+      "varName": "timer",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "timeout",
+      "comparison": "4",
+      "value": "4",
+      "iftrue": "2",
+      "iftrueVal": "447",
+      "iffalse": "2",
+      "iffalseVal": "448",
+      "name": "Check Variable"
+    },
+    {
+      "list": "9",
+      "varName": "reaclist",
+      "getType": "2",
+      "position": "",
+      "storage": "1",
+      "varName2": "gws-gewinner",
+      "name": "Get Item from List"
+    },
+    {
+      "member": "2",
+      "varName": "gws-gewinner",
+      "info": "0",
+      "varName2": "",
+      "iftrue": "2",
+      "iftrueVal": "463",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "list": "9",
+      "varName": "keylist",
+      "getType": "2",
+      "position": "",
+      "storage": "1",
+      "varName2": "spielekey",
+      "name": "Get Item from List"
+    },
+    {
+      "info": "3",
+      "find": "${tempVars(\"gws-gewinner\")}",
+      "storage": "1",
+      "varName": "gws-username",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "channel": "5",
+      "varName": "gws-gewinner",
+      "message": "Hallo ${tempVars(\"gws-gewinner\")},\nich bin heute deine Glücksfee, denn du hattest bei unserem Aktuellem Gewinnspiel Gewonnen.\nHier sind nun die weiteren Details dazu.\n\n**Hier ist nun dein Preis:**\n```${tempVars(\"spielekey\")}```",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "5",
+      "varName": "gws-channel-start",
+      "message": "💖 Glückwunsch ${tempVars(\"gws-gewinner\")}",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "title": "🎁 __**GEWINNSPIEL BEENDET**__ 🎁",
+      "author": "",
+      "color": "ff0000",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "${tempVars(\"author-grafikurl\")}",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "333",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "333",
+      "message": "Du hast bei unserem Gewinnspiel gewonmnen!\nPrüfe gleich schnell deine __Privaten Nachrichten,__ dort solltest du nun weitere Informationen zu deinem Preis vorfinden.\nGanz viel Spaß wünsche ich dir mit deinem Preis! __**${tempVars(\"author-titel\")}**__",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "333",
+      "channel": "5",
+      "varName2": "gws-channel-start",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "sentmessage",
+      "name": "Delete Message"
+    },
+    {
+      "list": "9",
+      "varName": "keylist",
+      "item": "${tempVars(\"spielekey\")}",
+      "storage": "1",
+      "varName2": "spielkey-remove",
+      "name": "Find Item in List"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "removeType": "2",
+      "position": "${tempVars(\"spielkey-remove\")}",
+      "storage2": "0",
+      "varName2": "keylist",
+      "name": "Remove Item from List"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "name": "Save Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "removeType": "1",
+      "position": "",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Remove Item from List"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "COPYRIGHT BY THALIRUTH#9938 - DBM@THALIRUTH.DE",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "author-channel",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-channel-send",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "name": "Create List"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "comparison": "5",
+      "value": "member",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "addType": "0",
+      "position": "",
+      "value": "member",
+      "name": "Add Item to List"
+    },
+    {
+      "time": "${tempVars(\"author-zeitangabe\")}",
+      "convertFrom": "3",
+      "convertTo": "2",
+      "storage": "1",
+      "varName": "gws-minuten",
+      "name": "Convert Time"
+    },
+    {
+      "changeType": "0",
+      "value": "${tempVars(\"gws-minuten\")}",
+      "storage": "1",
+      "varName": "timer",
+      "name": "Control Variable"
+    },
+    {
+      "title": "🎁 __**GEWINNSPIEL**__ 🎁",
+      "author": "",
+      "color": "RANDOM",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "${tempVars(\"author-grafikurl\")}",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "${tempVars(\"lmsg\")}",
+      "minute": "${tempVars(\"timem\")}",
+      "second": "${tempVars(\"timesec\")}",
+      "storage": "1",
+      "varName": "embed-time-start",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-start",
+      "message": "Zu Gewinnen gibt es: \n```${tempVars(\"author-titel\")}```\nWeitere Informationen zum Gewinnspiel:\n```${tempVars(\"author-content\")}```\nGewinnspiel Endet in **${tempVars(\"timer\")}** Minuten\n```Der Counter wird alle 5 Minuten Aktualisiert```",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-start",
+      "message": "Klicke unten auf das 🎁 um Teilzunehmen!",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-start",
+      "channel": "5",
+      "varName2": "gws-channel-start",
+      "storage3": "1",
+      "varName3": "sentmessage",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "sentmessage",
+      "emoji": "4",
+      "varName2": "🎁",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "changeType": "0",
+      "value": "0",
+      "storage": "1",
+      "varName": "timeout",
+      "name": "Control Variable"
+    },
+    {
+      "time": "1",
+      "measurement": "2",
+      "name": "Wait"
+    },
+    {
+      "message": "1",
+      "varName": "sentmessage",
+      "info": "1",
+      "find": "🎁",
+      "storage": "1",
+      "varName2": "eingeschenk",
+      "name": "Find Reaction"
+    },
+    {
+      "reaction": "1",
+      "varName": "eingeschenk",
+      "info": "7",
+      "storage": "1",
+      "varName2": "lastreact",
+      "name": "Store Reaction Info"
+    },
+    {
+      "reaction": "1",
+      "varName": "eingeschenk",
+      "info": "2",
+      "storage": "3",
+      "varName2": "reaclist",
+      "name": "Store Reaction Info"
+    },
+    {
+      "storage": "3",
+      "varName": "reaclist",
+      "name": "Save Variable"
+    },
+    {
+      "member": "2",
+      "varName": "lastreact",
+      "info": "2",
+      "storage": "1",
+      "varName2": "lastreactusername",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "timer",
+      "comparison": "3",
+      "value": "1",
+      "iftrue": "2",
+      "iftrueVal": "510",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "timeout",
+      "comparison": "4",
+      "value": "0",
+      "iftrue": "3",
+      "iftrueVal": "4",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "title": "🎁 __**GEWINNSPIEL**__ 🎁",
+      "author": "",
+      "color": "RANDOM",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "${tempVars(\"author-grafikurl\")}",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed-time-edit",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-edit",
+      "message": "Zu Gewinnen gibt es: \n```${tempVars(\"author-titel\")}```\nWeitere Informationen zum Gewinnspiel:\n```${tempVars(\"author-content\")}```\nGewinnspiel Endet in **${tempVars(\"timer\")}** Minuten\n```Der Counter wird alle 5 Minuten Aktualisiert```",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-edit",
+      "message": "Klicke unten auf das 🎁 um Teilzunehmen!",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "sentmessage",
+      "storage2": "1",
+      "varName2": "embed-time-edit",
+      "name": "Edit Embed"
+    },
+    {
+      "changeType": "1",
+      "value": "1",
+      "storage": "1",
+      "varName": "timeout",
+      "name": "Control Variable"
+    },
+    {
+      "changeType": "0",
+      "value": "${tempVars(\"timer\")-1}",
+      "storage": "1",
+      "varName": "timer",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "timeout",
+      "comparison": "4",
+      "value": "4",
+      "iftrue": "2",
+      "iftrueVal": "494",
+      "iffalse": "2",
+      "iffalseVal": "495",
+      "name": "Check Variable"
+    },
+    {
+      "list": "9",
+      "varName": "reaclist",
+      "getType": "2",
+      "position": "",
+      "storage": "1",
+      "varName2": "gws-gewinner",
+      "name": "Get Item from List"
+    },
+    {
+      "member": "2",
+      "varName": "gws-gewinner",
+      "info": "0",
+      "varName2": "",
+      "iftrue": "2",
+      "iftrueVal": "510",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "list": "9",
+      "varName": "keylist",
+      "getType": "2",
+      "position": "",
+      "storage": "1",
+      "varName2": "spielekey",
+      "name": "Get Item from List"
+    },
+    {
+      "info": "3",
+      "find": "${tempVars(\"gws-gewinner\")}",
+      "storage": "1",
+      "varName": "gws-username",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "channel": "5",
+      "varName": "gws-gewinner",
+      "message": "Hallo ${tempVars(\"gws-gewinner\")},\nich bin heute deine Glücksfee, denn du hattest bei unserem Aktuellem Gewinnspiel Gewonnen.\nHier sind nun die weiteren Details dazu.\n\n**Hier ist nun dein Preis:**\n```${tempVars(\"spielekey\")}```",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "5",
+      "varName": "gws-channel-start",
+      "message": "💖 Glückwunsch ${tempVars(\"gws-gewinner\")}",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "title": "🎁 __**GEWINNSPIEL BEENDET**__ 🎁",
+      "author": "",
+      "color": "ff0000",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "${tempVars(\"author-grafikurl\")}",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "333",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "333",
+      "message": "Du hast bei unserem Gewinnspiel gewonmnen!\nPrüfe gleich schnell deine __Privaten Nachrichten,__ dort solltest du nun weitere Informationen zu deinem Preis vorfinden.\nGanz viel Spaß wünsche ich dir mit deinem Preis! __**${tempVars(\"author-titel\")}**__",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "333",
+      "channel": "5",
+      "varName2": "gws-channel-start",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "sentmessage",
+      "name": "Delete Message"
+    },
+    {
+      "list": "9",
+      "varName": "keylist",
+      "item": "${tempVars(\"spielekey\")}",
+      "storage": "1",
+      "varName2": "spielkey-remove",
+      "name": "Find Item in List"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "removeType": "2",
+      "position": "${tempVars(\"spielkey-remove\")}",
+      "storage2": "0",
+      "varName2": "keylist",
+      "name": "Remove Item from List"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "name": "Save Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "removeType": "1",
+      "position": "",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Remove Item from List"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "COPYRIGHT BY THALIRUTH#9938 - DBM@THALIRUTH.DE",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "author-channel",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-channel-send",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "name": "Create List"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "comparison": "5",
+      "value": "member",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "addType": "0",
+      "position": "",
+      "value": "member",
+      "name": "Add Item to List"
+    },
+    {
+      "time": "${tempVars(\"author-zeitangabe\")}",
+      "convertFrom": "3",
+      "convertTo": "2",
+      "storage": "1",
+      "varName": "gws-minuten",
+      "name": "Convert Time"
+    },
+    {
+      "changeType": "0",
+      "value": "${tempVars(\"gws-minuten\")}",
+      "storage": "1",
+      "varName": "timer",
+      "name": "Control Variable"
+    },
+    {
+      "title": "🎁 __**GEWINNSPIEL**__ 🎁",
+      "author": "",
+      "color": "RANDOM",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "${tempVars(\"lmsg\")}",
+      "minute": "${tempVars(\"timem\")}",
+      "second": "${tempVars(\"timesec\")}",
+      "storage": "1",
+      "varName": "embed-time-start",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-start",
+      "message": "Zu Gewinnen gibt es: \n```${tempVars(\"author-titel\")}```\nGewinnspiel Endet in **${tempVars(\"timer\")}** Minuten\n```Der Counter wird alle 5 Minuten Aktualisiert```\n**__Sponsored by:__** ${tempVars(\"author-sponsor\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-start",
+      "message": "Klicke unten auf das 🎁 um Teilzunehmen!",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-start",
+      "channel": "5",
+      "varName2": "gws-channel-start",
+      "storage3": "1",
+      "varName3": "sentmessage",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "sentmessage",
+      "emoji": "4",
+      "varName2": "🎁",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "changeType": "0",
+      "value": "0",
+      "storage": "1",
+      "varName": "timeout",
+      "name": "Control Variable"
+    },
+    {
+      "time": "1",
+      "measurement": "2",
+      "name": "Wait"
+    },
+    {
+      "message": "1",
+      "varName": "sentmessage",
+      "info": "1",
+      "find": "🎁",
+      "storage": "1",
+      "varName2": "eingeschenk",
+      "name": "Find Reaction"
+    },
+    {
+      "reaction": "1",
+      "varName": "eingeschenk",
+      "info": "7",
+      "storage": "1",
+      "varName2": "lastreact",
+      "name": "Store Reaction Info"
+    },
+    {
+      "reaction": "1",
+      "varName": "eingeschenk",
+      "info": "2",
+      "storage": "3",
+      "varName2": "reaclist",
+      "name": "Store Reaction Info"
+    },
+    {
+      "storage": "3",
+      "varName": "reaclist",
+      "name": "Save Variable"
+    },
+    {
+      "member": "2",
+      "varName": "lastreact",
+      "info": "2",
+      "storage": "1",
+      "varName2": "lastreactusername",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "timer",
+      "comparison": "3",
+      "value": "1",
+      "iftrue": "2",
+      "iftrueVal": "557",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "timeout",
+      "comparison": "4",
+      "value": "0",
+      "iftrue": "3",
+      "iftrueVal": "4",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "title": "🎁 __**GEWINNSPIEL**__ 🎁",
+      "author": "",
+      "color": "RANDOM",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed-time-edit",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-edit",
+      "message": "Zu Gewinnen gibt es: \n```${tempVars(\"author-titel\")}```\nGewinnspiel Endet in **${tempVars(\"timer\")}** Minuten\n```Der Counter wird alle 5 Minuten Aktualisiert```\n**__Sponsored by:__** ${tempVars(\"author-sponsor\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-edit",
+      "message": "Klicke unten auf das 🎁 um Teilzunehmen!",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "sentmessage",
+      "storage2": "1",
+      "varName2": "embed-time-edit",
+      "name": "Edit Embed"
+    },
+    {
+      "changeType": "1",
+      "value": "1",
+      "storage": "1",
+      "varName": "timeout",
+      "name": "Control Variable"
+    },
+    {
+      "changeType": "0",
+      "value": "${tempVars(\"timer\")-1}",
+      "storage": "1",
+      "varName": "timer",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "timeout",
+      "comparison": "4",
+      "value": "4",
+      "iftrue": "2",
+      "iftrueVal": "541",
+      "iffalse": "2",
+      "iffalseVal": "542",
+      "name": "Check Variable"
+    },
+    {
+      "list": "9",
+      "varName": "reaclist",
+      "getType": "2",
+      "position": "",
+      "storage": "1",
+      "varName2": "gws-gewinner",
+      "name": "Get Item from List"
+    },
+    {
+      "member": "2",
+      "varName": "gws-gewinner",
+      "info": "0",
+      "varName2": "",
+      "iftrue": "2",
+      "iftrueVal": "557",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "list": "9",
+      "varName": "keylist",
+      "getType": "2",
+      "position": "",
+      "storage": "1",
+      "varName2": "spielekey",
+      "name": "Get Item from List"
+    },
+    {
+      "info": "3",
+      "find": "${tempVars(\"gws-gewinner\")}",
+      "storage": "1",
+      "varName": "gws-username",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "channel": "5",
+      "varName": "gws-gewinner",
+      "message": "Hallo ${tempVars(\"gws-gewinner\")},\nich bin heute deine Glücksfee, denn du hattest bei unserem Aktuellem Gewinnspiel Gewonnen.\nHier sind nun die weiteren Details dazu.\n\n**Hier ist nun dein Preis:**\n```${tempVars(\"spielekey\")}```",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "5",
+      "varName": "gws-channel-start",
+      "message": "💖 Glückwunsch ${tempVars(\"gws-gewinner\")}",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "title": "🎁 __**GEWINNSPIEL BEENDET**__ 🎁",
+      "author": "",
+      "color": "ff0000",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "333",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "333",
+      "message": "Du hast bei unserem Gewinnspiel gewonmnen!\nPrüfe gleich schnell deine __Privaten Nachrichten,__ dort solltest du nun weitere Informationen zu deinem Preis vorfinden.\nGanz viel Spaß wünsche ich dir mit deinem Preis! __**${tempVars(\"author-titel\")}**__",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "333",
+      "channel": "5",
+      "varName2": "gws-channel-start",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "sentmessage",
+      "name": "Delete Message"
+    },
+    {
+      "list": "9",
+      "varName": "keylist",
+      "item": "${tempVars(\"spielekey\")}",
+      "storage": "1",
+      "varName2": "spielkey-remove",
+      "name": "Find Item in List"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "removeType": "2",
+      "position": "${tempVars(\"spielkey-remove\")}",
+      "storage2": "0",
+      "varName2": "keylist",
+      "name": "Remove Item from List"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "name": "Save Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "removeType": "1",
+      "position": "",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Remove Item from List"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "COPYRIGHT BY THALIRUTH#9938 - DBM@THALIRUTH.DE",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "author-channel",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "gws-embed-channel-send",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "name": "Create List"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "comparison": "5",
+      "value": "member",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "addType": "0",
+      "position": "",
+      "value": "member",
+      "name": "Add Item to List"
+    },
+    {
+      "time": "${tempVars(\"author-zeitangabe\")}",
+      "convertFrom": "3",
+      "convertTo": "2",
+      "storage": "1",
+      "varName": "gws-minuten",
+      "name": "Convert Time"
+    },
+    {
+      "changeType": "0",
+      "value": "${tempVars(\"gws-minuten\")}",
+      "storage": "1",
+      "varName": "timer",
+      "name": "Control Variable"
+    },
+    {
+      "title": "🎁 __**GEWINNSPIEL**__ 🎁",
+      "author": "",
+      "color": "RANDOM",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "${tempVars(\"lmsg\")}",
+      "minute": "${tempVars(\"timem\")}",
+      "second": "${tempVars(\"timesec\")}",
+      "storage": "1",
+      "varName": "embed-time-start",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-start",
+      "message": "Zu Gewinnen gibt es: \n```${tempVars(\"author-titel\")}```\nWeitere Informationen zum Gewinnspiel:\n```${tempVars(\"author-content\")}```\nGewinnspiel Endet in **${tempVars(\"timer\")}** Minuten\n```Der Counter wird alle 5 Minuten Aktualisiert```\n**__Sponsored by:__** ${tempVars(\"author-sponsor\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-start",
+      "message": "Klicke unten auf das 🎁 um Teilzunehmen!",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-start",
+      "channel": "5",
+      "varName2": "gws-channel-start",
+      "storage3": "1",
+      "varName3": "sentmessage",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "sentmessage",
+      "emoji": "4",
+      "varName2": "🎁",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "changeType": "0",
+      "value": "0",
+      "storage": "1",
+      "varName": "timeout",
+      "name": "Control Variable"
+    },
+    {
+      "time": "1",
+      "measurement": "2",
+      "name": "Wait"
+    },
+    {
+      "message": "1",
+      "varName": "sentmessage",
+      "info": "1",
+      "find": "🎁",
+      "storage": "1",
+      "varName2": "eingeschenk",
+      "name": "Find Reaction"
+    },
+    {
+      "reaction": "1",
+      "varName": "eingeschenk",
+      "info": "7",
+      "storage": "1",
+      "varName2": "lastreact",
+      "name": "Store Reaction Info"
+    },
+    {
+      "reaction": "1",
+      "varName": "eingeschenk",
+      "info": "2",
+      "storage": "3",
+      "varName2": "reaclist",
+      "name": "Store Reaction Info"
+    },
+    {
+      "storage": "3",
+      "varName": "reaclist",
+      "name": "Save Variable"
+    },
+    {
+      "member": "2",
+      "varName": "lastreact",
+      "info": "2",
+      "storage": "1",
+      "varName2": "lastreactusername",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "timer",
+      "comparison": "3",
+      "value": "1",
+      "iftrue": "2",
+      "iftrueVal": "604",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "timeout",
+      "comparison": "4",
+      "value": "0",
+      "iftrue": "3",
+      "iftrueVal": "4",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "title": "🎁 __**GEWINNSPIEL**__ 🎁",
+      "author": "",
+      "color": "RANDOM",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed-time-edit",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-edit",
+      "message": "Zu Gewinnen gibt es: \n```${tempVars(\"author-titel\")}```\nWeitere Informationen zum Gewinnspiel:\n```${tempVars(\"author-content\")}```\nGewinnspiel Endet in **${tempVars(\"timer\")}** Minuten\n```Der Counter wird alle 5 Minuten Aktualisiert```\n**__Sponsored by:__** ${tempVars(\"author-sponsor\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-time-edit",
+      "message": "Klicke unten auf das 🎁 um Teilzunehmen!",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "sentmessage",
+      "storage2": "1",
+      "varName2": "embed-time-edit",
+      "name": "Edit Embed"
+    },
+    {
+      "changeType": "1",
+      "value": "1",
+      "storage": "1",
+      "varName": "timeout",
+      "name": "Control Variable"
+    },
+    {
+      "changeType": "0",
+      "value": "${tempVars(\"timer\")-1}",
+      "storage": "1",
+      "varName": "timer",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "timeout",
+      "comparison": "4",
+      "value": "4",
+      "iftrue": "2",
+      "iftrueVal": "588",
+      "iffalse": "2",
+      "iffalseVal": "589",
+      "name": "Check Variable"
+    },
+    {
+      "list": "9",
+      "varName": "reaclist",
+      "getType": "2",
+      "position": "",
+      "storage": "1",
+      "varName2": "gws-gewinner",
+      "name": "Get Item from List"
+    },
+    {
+      "member": "2",
+      "varName": "gws-gewinner",
+      "info": "0",
+      "varName2": "",
+      "iftrue": "2",
+      "iftrueVal": "604",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "list": "9",
+      "varName": "keylist",
+      "getType": "2",
+      "position": "",
+      "storage": "1",
+      "varName2": "spielekey",
+      "name": "Get Item from List"
+    },
+    {
+      "info": "3",
+      "find": "${tempVars(\"gws-gewinner\")}",
+      "storage": "1",
+      "varName": "gws-username",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "channel": "5",
+      "varName": "gws-gewinner",
+      "message": "Hallo ${tempVars(\"gws-gewinner\")},\nich bin heute deine Glücksfee, denn du hattest bei unserem Aktuellem Gewinnspiel Gewonnen.\nHier sind nun die weiteren Details dazu.\n\n**Hier ist nun dein Preis:**\n```${tempVars(\"spielekey\")}```",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "5",
+      "varName": "gws-channel-start",
+      "message": "💖 Glückwunsch ${tempVars(\"gws-gewinner\")}",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "title": "🎁 __**GEWINNSPIEL BEENDET**__ 🎁",
+      "author": "",
+      "color": "ff0000",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "333",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "333",
+      "message": "Du hast bei unserem Gewinnspiel gewonmnen!\nPrüfe gleich schnell deine __Privaten Nachrichten,__ dort solltest du nun weitere Informationen zu deinem Preis vorfinden.\nGanz viel Spaß wünsche ich dir mit deinem Preis! __**${tempVars(\"author-titel\")}**__",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "333",
+      "channel": "5",
+      "varName2": "gws-channel-start",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "sentmessage",
+      "name": "Delete Message"
+    },
+    {
+      "list": "9",
+      "varName": "keylist",
+      "item": "${tempVars(\"spielekey\")}",
+      "storage": "1",
+      "varName2": "spielkey-remove",
+      "name": "Find Item in List"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "removeType": "2",
+      "position": "${tempVars(\"spielkey-remove\")}",
+      "storage2": "0",
+      "varName2": "keylist",
+      "name": "Remove Item from List"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "name": "Save Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "TimerLOCK",
+      "removeType": "1",
+      "position": "",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Remove Item from List"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "COPYRIGHT BY THALIRUTH#9938 - DBM@THALIRUTH.DE",
+      "color": "#ff8000",
+      "name": "Comment"
+    }
+  ],
+  "comType": "0"
+}
