@@ -17,5 +17,4 @@ Für alle RAW DATA´s bennötigt ihr die Aktuellen **[DBM Mods](https://github.c
 
 # Demo Video
 Hier ein kleines Video das dir das System etwas gfenauer Zeigt.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cLtzO4cV_OY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+[![](https://img.youtube.com/vi/cLtzO4cV_OY/maxresdefault.jpg)](https://www.youtube.com/watch?v=cLtzO4cV_OY&feature=youtu.be)
