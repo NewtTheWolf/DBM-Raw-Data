@@ -16,5 +16,5 @@ Das Give Away System besteht aus 3 Commands, es ist hier in der Regel keinerlei 
 Für alle RAW DATA´s bennötigt ihr die Aktuellen **[DBM Mods](https://github.com/Discord-Bot-Maker-Mods/DBM-Mods)** und die **DBM Beta Steam Version**
 
 # Demo Video
-Hier ein kleines Video das dir das System etwas gfenauer Zeigt.
+Hier ein kleines Video das dir das System etwas genauer Zeigt.
 [![](https://img.youtube.com/vi/cLtzO4cV_OY/maxresdefault.jpg)](https://www.youtube.com/watch?v=cLtzO4cV_OY&feature=youtu.be)
