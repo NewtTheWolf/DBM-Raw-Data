@@ -1,4 +1,6 @@
-# Erklärung zum GiveAway System
+# Erklärung zum GiveAway System (VERALTET)
+**[NEUES GIVE AWAY SYSTEM](https://github.com/thaliruth/DBM-Raw-Data/tree/master/Give%20Away)** 
+
 
 Das Original GiveAway System stammt vom Discord User Pike#0001
 Ich habe dies ein wenig Modifiziert und es Komplett ins Deutsche Übersetzt.
