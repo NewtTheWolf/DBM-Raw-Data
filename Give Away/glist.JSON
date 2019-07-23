@@ -1,0 +1,150 @@
+{
+  "name": "glist",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "uvBgZ",
+  "author": "Thaliruth#9938",
+  "actions": [
+    {
+      "comment": "COPYRIGHT BY THALIRUTH#9938 - DBM@THALIRUTH.DE",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "KICK_MEMBERS",
+      "iftrue": "2",
+      "iftrueVal": "8",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**__FEHLER: Keine Berechtigung!__**\nSorry ${member} aber um diesen Command ausführen zu können brauchst du **Member Kicken** Rechte.",
+      "storage": "1",
+      "varName2": "msg1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "msg1",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "call": "10",
+      "name": "Jump to Action"
+    },
+    {
+      "count": "1",
+      "name": "Skip Actions"
+    },
+    {
+      "count": "2",
+      "name": "Skip Actions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**__DBM ERROR Nr. 1337 Bitte Kontaktiere den Support!__**\n\nNun ja diese Fehlermeldung musst du nicht zwingend ernst nehmen, aber du fragst dich Vermutlich warum du diesen Fehler angezeigt bekommst.\nDas kann ich dir Erklären. du nutzt hier eine RAW Data von mir (<@289887089057857537>) und hast diese ohne Erfahrungen/Ahnung/Kenntnisse geändert bzw. Modifiziert oder vermutlich irgendwelche Actionen gelöscht.\nEin Erfahrener User weis in der Regel was er nun machen könnte um diesen Fehler zu vermeiden.\n\nUnerfahrene DBM User machen gerne aber immer **Copy&Paste** und Kopieren sich die mühevolle Arbeit anderer User, und verbreiten teilweise sogar deren RAW Datas als ihre eigenen.\nDies möchte ich zumindest mit dieser kleinen Sicherheitprotection versuchen zu vermeiden.\n\n**Daher empfehle ich dir: __Verwende bitte das Original von mir ohne Änderungen__ dann hast du auch keine Fehler**\n",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "3",
+      "varName": "reaclist",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**__ERROR: Es wurde noch keine Teilnehmerliste angelegt__**\nDie Action wurde Abgebrochen",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "list": "9",
+      "varName": "reaclist",
+      "start": "•",
+      "middle": "",
+      "end": "\\n",
+      "storage": "1",
+      "varName2": "glist",
+      "sort": "1",
+      "name": "Convert List to Text"
+    },
+    {
+      "title": "🎁 __**Gewinspiel Teilnehmerliste**__",
+      "author": "",
+      "color": "00ff00",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Folgende User stehen für das Aktuelle Gewinnspiel auf der Liste\n\n${tempVars(\"glist\")}\nDiese Liste wird nach jedem Start eines Gewinnspiel Automatisch erneuert! Es bedarff daher keiner Manuelen Löschung oder Handlung.\n\n**__Gewinspiel Commands__** (Nur für Admins/Staff/Mods)\nBeachte bitte das das **[p]** vor den unten stehenden Commands durch deinen Bot Prefix zu ersetzen ist. Wie zum beispiel **!** od. **.** oder **,** usw.\n```• Gewinspiel Starten: [p]gws start\n• Keyliste anzeigen: [p]keylist view\n• Keys auf Keyliste adden: [p]keylist add HIER-DEIN-KEY\n• Keys auf Keyliste löschen [p]keylist del HIER-DEIN-KEY```",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}
