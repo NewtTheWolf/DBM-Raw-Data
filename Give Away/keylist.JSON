@@ -1,0 +1,572 @@
+{
+  "name": "keylist",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "Izkjr",
+  "author": "Thaliruth#9938",
+  "actions": [
+    {
+      "comment": "COPYRIGHT BY THALIRUTH#9938 - DBM@THALIRUTH.DE",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "KICK_MEMBERS",
+      "iftrue": "2",
+      "iftrueVal": "8",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**__FEHLER: Keine Berechtigung!__**\nSorry ${member} aber um diesen Command ausführen zu können brauchst du **Member Kicken** Rechte.",
+      "storage": "1",
+      "varName2": "msg1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "msg1",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "call": "10",
+      "name": "Jump to Action"
+    },
+    {
+      "count": "1",
+      "name": "Skip Actions"
+    },
+    {
+      "count": "2",
+      "name": "Skip Actions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**__DBM ERROR Nr. 1337 Bitte Kontaktiere den Support!__**\n\nNun ja diese Fehlermeldung musst du nicht zwingend ernst nehmen, aber du fragst dich Vermutlich warum du diesen Fehler angezeigt bekommst.\nDas kann ich dir Erklären. du nutzt hier eine RAW Data von mir (<@289887089057857537>) und hast diese ohne Erfahrungen/Ahnung/Kenntnisse geändert bzw. Modifiziert oder vermutlich irgendwelche Actionen gelöscht.\nEin Erfahrener User weis in der Regel was er nun machen könnte um diesen Fehler zu vermeiden.\n\nUnerfahrene DBM User machen gerne aber immer **Copy&Paste** und Kopieren sich die mühevolle Arbeit anderer User, und verbreiten teilweise sogar deren RAW Datas als ihre eigenen.\nDies möchte ich zumindest mit dieser kleinen Sicherheitprotection versuchen zu vermeiden.\n\n**Daher empfehle ich dir: __Verwende bitte das Original von mir ohne Änderungen__ dann hast du auch keine Fehler**\n",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "subcmd",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "1",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "key",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "subcmd",
+      "comparison": "1",
+      "value": "\"add\"",
+      "iftrue": "2",
+      "iftrueVal": "24",
+      "iffalse": "0",
+      "iffalseVal": "20",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "subcmd",
+      "comparison": "1",
+      "value": "\"del\"",
+      "iftrue": "2",
+      "iftrueVal": "44",
+      "iffalse": "0",
+      "iffalseVal": "20",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "subcmd",
+      "comparison": "1",
+      "value": "\"view\"",
+      "iftrue": "2",
+      "iftrueVal": "60",
+      "iffalse": "2",
+      "iffalseVal": "20",
+      "name": "Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "COPYRIGHT BY THALIRUTH#9938 - DBM@THALIRUTH.DE",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
+    {
+      "title": "__❌ ERROR: Falsches Format__",
+      "author": "",
+      "color": "ff0000",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed-error",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-error",
+      "message": "Bitte gebe den Korekten Befehl an!\nVerwende eines der drei unten stehenden Commands.\n\nBeachte bitte das das **[p]** vor den unten stehenden Commands durch deinen Bot Prefix zu ersetzen ist. Wie zum beispiel **!** od. **.** oder **,** usw.\n```• Keyliste anzeigen [p]keylist view\n• Keys auf Keyliste adden [p]keylist add HIER DEIN KEY\n• Keys auf Keyliste löschen [p]keylist del HIER DEIN KEY```\n",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-error",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "count": "2",
+      "name": "Skip Actions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**__DBM ERROR Nr. 1337 Bitte Kontaktiere den Support!__**\n\nNun ja diese Fehlermeldung musst du nicht zwingend ernst nehmen, aber du fragst dich Vermutlich warum du diesen Fehler angezeigt bekommst.\nDas kann ich dir Erklären. du nutzt hier eine RAW Data von mir (<@289887089057857537>) und hast diese ohne Erfahrungen/Ahnung/Kenntnisse geändert bzw. Modifiziert oder vermutlich irgendwelche Actionen gelöscht.\nEin Erfahrener User weis in der Regel was er nun machen könnte um diesen Fehler zu vermeiden.\n\nUnerfahrene DBM User machen gerne aber immer **Copy&Paste** und Kopieren sich die mühevolle Arbeit anderer User, und verbreiten teilweise sogar deren RAW Datas als ihre eigenen.\nDies möchte ich zumindest mit dieser kleinen Sicherheitprotection versuchen zu vermeiden.\n\n**Daher empfehle ich dir: __Verwende bitte das Original von mir ohne Änderungen__ dann hast du auch keine Fehler**\n",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "name": "Create List"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "comparison": "5",
+      "value": "tempVars(\"key\")",
+      "iftrue": "0",
+      "iftrueVal": "1",
+      "iffalse": "2",
+      "iffalseVal": "35",
+      "name": "Check Variable"
+    },
+    {
+      "title": "❌ __**ERROR: Key vorhanden**__",
+      "author": "",
+      "color": "ff0000",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed-keyexist",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-keyexist",
+      "message": "Dieser Key __${tempVars(\"key\")}__ steht bereits auf der Liste!\nVerwende eines der zwei unten stehenden Commands.\n\nBeachte bitte das das **[p]** vor den unten stehenden Commands durch deinen Bot Prefix zu ersetzen ist, wie zum beispiel: **!** od. **.** od. **,** usw.\n```• Keyliste anzeigen [p]keylist view\n• Keys auf Keyliste löschen [p]keylist del HIER-DEIN-KEY\n• Keys auf Keyliste adden [p]keylist add HIER-DEIN-KEY```\n",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-keyexist",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "comment": "COPYRIGHT BY THALIRUTH#9938 - DBM@THALIRUTH.DE",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "count": "2",
+      "name": "Skip Actions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**__DBM ERROR Nr. 1337 Bitte Kontaktiere den Support!__**\n\nNun ja diese Fehlermeldung musst du nicht zwingend ernst nehmen, aber du fragst dich Vermutlich warum du diesen Fehler angezeigt bekommst.\nDas kann ich dir Erklären. du nutzt hier eine RAW Data von mir (<@289887089057857537>) und hast diese ohne Erfahrungen/Ahnung/Kenntnisse geändert bzw. Modifiziert oder vermutlich irgendwelche Actionen gelöscht.\nEin Erfahrener User weis in der Regel was er nun machen könnte um diesen Fehler zu vermeiden.\n\nUnerfahrene DBM User machen gerne aber immer **Copy&Paste** und Kopieren sich die mühevolle Arbeit anderer User, und verbreiten teilweise sogar deren RAW Datas als ihre eigenen.\nDies möchte ich zumindest mit dieser kleinen Sicherheitprotection versuchen zu vermeiden.\n\n**Daher empfehle ich dir: __Verwende bitte das Original von mir ohne Änderungen__ dann hast du auch keine Fehler**\n",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "addType": "0",
+      "position": "",
+      "value": "tempVars(\"key\")",
+      "name": "Add Item to List"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "name": "Save Variable"
+    },
+    {
+      "title": "✅ __**Key eingetragen**__",
+      "author": "",
+      "color": "00ff00",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed-keyadd",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-keyadd",
+      "message": "Folgender Key __${tempVars(\"key\")}__ wurde auf die Keyliste gesetzt.\nVerwende eines der unten stehenden Commands.\n\nBeachte bitte das das **[p]** vor den unten stehenden Commands durch deinen Bot Prefix zu ersetzen ist, wie zum beispiel: **!** od. **.** od. **,** usw.\n```• Keyliste anzeigen: [p]keylist view\n• Keys auf Keyliste löschen [p]keylist del HIER DEIN KEY\n• Gewinnspiel Starten: [p]gws start```",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-keyadd",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "comparison": "5",
+      "value": "tempVars(\"key\")",
+      "iftrue": "2",
+      "iftrueVal": "50",
+      "iffalse": "0",
+      "iffalseVal": "35",
+      "name": "Check Variable"
+    },
+    {
+      "title": "❌ __**ERROR: Key nicht vorhanden**__",
+      "author": "",
+      "color": "ff0000",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed-keynoexist",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-keynoexist",
+      "message": "Dieser Key __${tempVars(\"key\")}__ steht nicht auf der Liste und kann daher nicht gelöscht werden.\nVerwende eines der zwei unten stehenden Commands.\n\nBeachte bitte das das **[p]** vor den unten stehenden Commands durch deinen Bot Prefix zu ersetzen ist, wie zum beispiel: **!** od. **.** od. **,** usw.\n```• Keyliste anzeigen [p]keylist view\n• Keys auf Keyliste adden [p]keylist add HIER-DEIN-KEY```\n",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-keynoexist",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "comment": "COPYRIGHT BY THALIRUTH#9938 - DBM@THALIRUTH.DE",
+      "color": "#ff8000",
+      "name": "Comment"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "count": "2",
+      "name": "Skip Actions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**__DBM ERROR Nr. 1337 Bitte Kontaktiere den Support!__**\n\nNun ja diese Fehlermeldung musst du nicht zwingend ernst nehmen, aber du fragst dich Vermutlich warum du diesen Fehler angezeigt bekommst.\nDas kann ich dir Erklären. du nutzt hier eine RAW Data von mir (<@289887089057857537>) und hast diese ohne Erfahrungen/Ahnung/Kenntnisse geändert bzw. Modifiziert oder vermutlich irgendwelche Actionen gelöscht.\nEin Erfahrener User weis in der Regel was er nun machen könnte um diesen Fehler zu vermeiden.\n\nUnerfahrene DBM User machen gerne aber immer **Copy&Paste** und Kopieren sich die mühevolle Arbeit anderer User, und verbreiten teilweise sogar deren RAW Datas als ihre eigenen.\nDies möchte ich zumindest mit dieser kleinen Sicherheitprotection versuchen zu vermeiden.\n\n**Daher empfehle ich dir: __Verwende bitte das Original von mir ohne Änderungen__ dann hast du auch keine Fehler**\n",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "list": "9",
+      "varName": "keylist",
+      "item": "${tempVars(\"key\")}",
+      "storage": "1",
+      "varName2": "keyfound",
+      "name": "Find Item in List"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "removeType": "2",
+      "position": "${tempVars(\"keyfound\")}",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Remove Item from List"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "name": "Save Variable"
+    },
+    {
+      "title": "✅ __**Key ausgetragen**__",
+      "author": "",
+      "color": "00ff00",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed-keydel",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-keydel",
+      "message": "Folgender Key __${tempVars(\"key\")}__ wurde von der Keyliste genommen.\nVerwende eines der unten stehenden Commands.\n\nBeachte bitte das das **[p]** vor den unten stehenden Commands durch deinen Bot Prefix zu ersetzen ist, wie zum beispiel: **!** od. **.** od. **,** usw.\n```• Keyliste anzeigen: [p]keylist view\n• Keys auf Keyliste adden: [p]keylist add HIER-DEIN-KEY\n• Gewinnspiel Starten: [p]gws start```\n",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-keydel",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "3",
+      "varName": "keylist",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "66",
+      "name": "Check Variable"
+    },
+    {
+      "list": "9",
+      "varName": "keylist",
+      "start": "•",
+      "middle": "",
+      "end": "\\n",
+      "storage": "1",
+      "varName2": "keylistshow",
+      "sort": "1",
+      "name": "Convert List to Text"
+    },
+    {
+      "title": "🔑 __**Keyliste**__",
+      "author": "",
+      "color": "00ff00",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed-keylist",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-keylist",
+      "message": "Folgende Keys stehen auf der Liste.\n```${tempVars(\"keylistshow\")}```\nVerwende eines der unten stehenden Commands\n\n• Gewinspiel Starten: `[p]gws start`\n• Reactions User Liste anzeigen lassen `[p]glist`\n• Keyliste anzeigen (Diese Liste hier `[p]keylist view`)\n• Keys auf Keyliste adden `[p]keylist add HIER DEIN KEY`\n• Keys auf Keyliste löschen `[p]keylist del HIER DEIN KEY`",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-keylist",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "title": "❓ __**Ups... Keyliste nicht vohanden**__",
+      "author": "",
+      "color": "ff0000",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed-keylist-no",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-keylist-no",
+      "message": "Es ist derzeit noch keine Keyliste angelegt worden!\nVerwende eines der unten stehenden Commands.\n\nBeachte bitte das das **[p]** vor den unten stehenden Commands durch deinen Bot Prefix zu ersetzen ist, wie zum beispiel: **!** od. **.** od. **,** usw.\n```• Keys auf Keyliste adden: [p]keylist add HIER-DEIN-KEY\n• Keys auf Keyliste löschen: [p]keylist del HIER-DEIN-KEY```",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed-keylist-no",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}
