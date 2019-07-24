@@ -165,7 +165,7 @@
     },
     {
       "info": "0",
-      "find": "CHANNEL ID HIER EINTRAGEN",
+      "find": "HIER DEINE ID",
       "storage": "1",
       "varName": "reportchan",
       "name": "Find Channel"
@@ -227,11 +227,11 @@
       "name": "Check Variable"
     },
     {
-      "input": "**Grund:** ${tempVars(\"begründung\")}\n**Reportet durch:** ${tempVars(\"reportname\")}\n**Reportet am:** ${tempVars(\"tag\")}.${tempVars(\"monat\")}.${tempVars(\"jahr\")}\\n\n",
+      "input": "\n",
       "format": ".json",
       "filename": "${tempVars(\"username\")}",
       "filepath": "./resources/Reports/",
-      "filetask": "1",
+      "filetask": "0",
       "name": "File Control"
     },
     {
@@ -239,7 +239,7 @@
       "format": ".json",
       "filename": "${tempVars(\"username\")}",
       "filepath": "./resources/Reports/",
-      "filetask": "2",
+      "filetask": "1",
       "name": "File Control"
     },
     {
