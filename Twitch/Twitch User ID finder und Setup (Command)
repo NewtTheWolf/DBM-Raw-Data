@@ -140,7 +140,7 @@
       "name": "Store Twitch Info"
     },
     {
-      "title": "Twitch Streamer Info für: ${tempVars(\"imputname\")}",
+      "title": "Twitch Streamer Info für: ${tempVars(\"setup\")}",
       "author": "",
       "color": "#8132a8",
       "url": "https://twitch.tv/${tempVars(\"streamerLoginName\")}",
