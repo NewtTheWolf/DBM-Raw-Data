@@ -1,0 +1,330 @@
+{
+  "name": "Twitch Livestream Check",
+  "author": "#Thaliruth9938",
+  "temp": "300",
+  "event-type": "3",
+  "_id": "YkkkkMdiZ",
+  "actions": [
+    {
+      "info": "0",
+      "find": "${serverVars(\"twitchchannel-id\")}",
+      "storage": "1",
+      "varName": "channel",
+      "name": "Find Channel"
+    },
+    {
+      "type": "1",
+      "inputtype": "0",
+      "input": "${serverVars(\"twitchuser-id\")}",
+      "info1": "2",
+      "info2": "5",
+      "info3": "3",
+      "info4": "0",
+      "clientid": "${serverVars(\"twitchclient-id\")}",
+      "results": "",
+      "storage": "1",
+      "varName": "stream-live",
+      "name": "Store Twitch Info"
+    },
+    {
+      "storage": "1",
+      "varName": "stream-live",
+      "conversion": "2",
+      "storage2": "2",
+      "varName2": "livestream",
+      "name": "Convert Variable"
+    },
+    {
+      "storage": "2",
+      "varName": "livestream",
+      "name": "Save Variable"
+    },
+    {
+      "storage": "2",
+      "varName": "livestream",
+      "comparison": "1",
+      "value": "\"false\"",
+      "iftrue": "2",
+      "iftrueVal": "23",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "twitchstream",
+      "comparison": "1",
+      "value": "\"on\"",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "twitchstream",
+      "changeType": "0",
+      "value": "\"on\"",
+      "name": "Control Server Data"
+    },
+    {
+      "storage": "2",
+      "varName": "stream-off-msg",
+      "name": "Delete Message"
+    },
+    {
+      "type": "1",
+      "inputtype": "0",
+      "input": "${serverVars(\"twitchuser-id\")}",
+      "info1": "2",
+      "info2": "6",
+      "info3": "3",
+      "info4": "0",
+      "clientid": "${serverVars(\"twitchclient-id\")}",
+      "results": "",
+      "storage": "1",
+      "varName": "stream-title",
+      "name": "Store Twitch Info"
+    },
+    {
+      "type": "1",
+      "inputtype": "0",
+      "input": "${serverVars(\"twitchuser-id\")}",
+      "info1": "2",
+      "info2": "10",
+      "info3": "3",
+      "info4": "0",
+      "clientid": "${serverVars(\"twitchclient-id\")}",
+      "results": "",
+      "storage": "1",
+      "varName": "stream-bild",
+      "name": "Store Twitch Info"
+    },
+    {
+      "type": "1",
+      "inputtype": "0",
+      "input": "${serverVars(\"twitchuser-id\")}",
+      "info1": "2",
+      "info2": "2",
+      "info3": "3",
+      "info4": "0",
+      "clientid": "${serverVars(\"twitchclient-id\")}",
+      "results": "",
+      "storage": "1",
+      "varName": "stream-name",
+      "name": "Store Twitch Info"
+    },
+    {
+      "type": "1",
+      "inputtype": "0",
+      "input": "${serverVars(\"twitchuser-id\")}",
+      "info1": "2",
+      "info2": "3",
+      "info3": "3",
+      "info4": "0",
+      "clientid": "${serverVars(\"twitchclient-id\")}",
+      "results": "",
+      "storage": "1",
+      "varName": "game-id",
+      "name": "Store Twitch Info"
+    },
+    {
+      "type": "3",
+      "inputtype": "0",
+      "input": "${tempVars(\"game-id\")}",
+      "info1": "2",
+      "info2": "5",
+      "info3": "3",
+      "info4": "1",
+      "clientid": "${serverVars(\"twitchclient-id\")}",
+      "results": "",
+      "storage": "1",
+      "varName": "stream-game",
+      "name": "Store Twitch Info"
+    },
+    {
+      "type": "1",
+      "inputtype": "0",
+      "input": "${serverVars(\"twitchuser-id\")}",
+      "info1": "2",
+      "info2": "7",
+      "info3": "3",
+      "info4": "0",
+      "clientid": "${serverVars(\"twitchclient-id\")}",
+      "results": "",
+      "storage": "1",
+      "varName": "stream-zuschauer",
+      "name": "Store Twitch Info"
+    },
+    {
+      "title": "${tempVars(\"stream-name\")} ist LIVE (Zum Livestream hier Klicken)",
+      "author": "",
+      "color": "#8132a8",
+      "url": "https://twitch.tv/${tempVars(\"stream-name\")}",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "${tempVars(\"stream-bild\")}",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Stream Titel:",
+      "message": "${tempVars(\"stream-title\")}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Stream Zuschauer:",
+      "message": "${tempVars(\"stream-zuschauer\")} Zuschauer",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Stream Spiel:",
+      "message": "${tempVars(\"stream-game\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "5",
+      "varName2": "channel",
+      "storage3": "2",
+      "varName3": "stream-on-msg",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "2",
+      "varName": "stream-on-msg",
+      "name": "Save Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "twitchstream",
+      "comparison": "1",
+      "value": "\"off\"",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "twitchstream",
+      "changeType": "0",
+      "value": "\"off\"",
+      "name": "Control Server Data"
+    },
+    {
+      "storage": "2",
+      "varName": "stream-on-msg",
+      "name": "Delete Message"
+    },
+    {
+      "type": "0",
+      "inputtype": "0",
+      "input": "${serverVars(\"twitchuser-id\")}",
+      "info1": "1",
+      "info2": "2",
+      "info3": "3",
+      "info4": "0",
+      "clientid": "${serverVars(\"twitchclient-id\")}",
+      "results": "",
+      "storage": "1",
+      "varName": "stream-name",
+      "name": "Store Twitch Info"
+    },
+    {
+      "type": "0",
+      "inputtype": "0",
+      "input": "${serverVars(\"twitchuser-id\")}",
+      "info1": "7",
+      "info2": "7",
+      "info3": "3",
+      "info4": "0",
+      "clientid": "${serverVars(\"twitchclient-id\")}",
+      "results": "",
+      "storage": "1",
+      "varName": "offbild",
+      "name": "Store Twitch Info"
+    },
+    {
+      "title": "${tempVars(\"stream-name\")} ist nun wieder Offline",
+      "author": "",
+      "color": "#FF0000",
+      "url": "https://twitch.tv/${tempVars(\"stream-name\")}",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "${tempVars(\"offbild\")}",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Es war ein Klasse Stream, aber alles gute hat auch mal sein Ende. Wir sehen uns wieder keine Frage :D",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "5",
+      "varName2": "channel",
+      "storage3": "2",
+      "varName3": "stream-off-msg",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "2",
+      "varName": "stream-off-msg",
+      "name": "Save Variable"
+    }
+  ]
+}
