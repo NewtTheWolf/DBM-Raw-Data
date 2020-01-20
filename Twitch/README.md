@@ -12,7 +12,7 @@ Für alle RAW DATA´s bennötigt ihr die Aktuellen **[DBM Mods](https://github.c
 ![github-large](https://i.imgur.com/YIeJAs1.jpg)
 
 # Discord Offline Meldung
-![github-large](https://i.imgur.com/undefined.jpg)
+![github-large](https://i.imgur.com/bpZ5fjJ.jpg)
 
 # Twitch User ID finder
 ![github-large](https://i.imgur.com/VlrcXnU.jpg)
