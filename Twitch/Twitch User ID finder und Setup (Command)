@@ -99,7 +99,7 @@
     },
     {
       "changeType": "0",
-      "value": "\"wvn95x8jxals9x89gzd8dj8vvn81gz\"",
+      "value": "\"HIER DEINE TWITCH CLIENT ID EINTRAGEN\"",
       "storage": "1",
       "varName": "TwitchClientID",
       "name": "Control Variable"
