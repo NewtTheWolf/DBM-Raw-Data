@@ -162,7 +162,7 @@
       "name": "Store Twitch Info"
     },
     {
-      "title": "${tempVars(\"stream-name\")} ist LIVE (Zum Livestream hier Klicken)",
+      "title": "${tempVars(\"stream-name\")} ist LIVE (Zum anschauen hier klicken)",
       "author": "",
       "color": "#8132a8",
       "url": "https://twitch.tv/${tempVars(\"stream-name\")}",
