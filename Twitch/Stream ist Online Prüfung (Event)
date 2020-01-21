@@ -1,9 +1,8 @@
 {
-  "name": "Twitch Livestream Check",
-  "author": "#Thaliruth9938",
+  "name": "Livestream Check",
   "temp": "300",
   "event-type": "3",
-  "_id": "YkkkkMdiZ",
+  "_id": "eGUoz",
   "actions": [
     {
       "info": "0",
@@ -23,12 +22,12 @@
       "clientid": "${serverVars(\"twitchclient-id\")}",
       "results": "",
       "storage": "1",
-      "varName": "stream-live",
+      "varName": "live-stream",
       "name": "Store Twitch Info"
     },
     {
       "storage": "1",
-      "varName": "stream-live",
+      "varName": "live-stream",
       "conversion": "2",
       "storage2": "2",
       "varName2": "livestream",
@@ -235,7 +234,7 @@
       "comparison": "1",
       "value": "\"off\"",
       "iftrue": "1",
-      "iftrueVal": "",
+      "iftrueVal": "1",
       "iffalse": "0",
       "iffalseVal": "",
       "name": "Check Server Data"
@@ -247,6 +246,17 @@
       "changeType": "0",
       "value": "\"off\"",
       "name": "Control Server Data"
+    },
+    {
+      "storage": "2",
+      "varName": "stream-on-msg",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
     },
     {
       "storage": "2",
