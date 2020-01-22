@@ -99,7 +99,7 @@
     },
     {
       "changeType": "0",
-      "value": "\"HIER DEINE TWITCH CLIENT ID EINTRAGEN\"",
+      "value": "\"HIER TWITCH CLIENT ID\"",
       "storage": "1",
       "varName": "TwitchClientID",
       "name": "Control Variable"
@@ -140,10 +140,10 @@
       "name": "Store Twitch Info"
     },
     {
-      "title": "Twitch Streamer Info für: ${tempVars(\"setup\")}",
+      "title": "Twitch Streamer Info für: ${tempVars(\"inputname\")}",
       "author": "",
       "color": "#8132a8",
-      "url": "https://twitch.tv/${tempVars(\"streamerLoginName\")}",
+      "url": "https://twitch.tv/${tempVars(\"inputname\")}",
       "authorIcon": "",
       "authorUrl": "",
       "imageUrl": "",
@@ -173,7 +173,7 @@
       "storage": "1",
       "varName": "TSEmbed",
       "fieldName": "__Twich Kanal:__",
-      "message": "[Klick mich](https://twitch.tv/${tempVars(\"streamerLoginName\")})",
+      "message": "[Klick mich](https://twitch.tv/${tempVars(\"inputname\")})",
       "inline": "0",
       "name": "Add Embed Field"
     },
