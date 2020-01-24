@@ -1,8 +1,9 @@
 {
   "name": "Livestream Check",
-  "temp": "300",
+  "temp": "60",
   "event-type": "3",
   "_id": "eGUoz",
+  "author": "thaliruth#9938",
   "actions": [
     {
       "info": "0",
@@ -12,9 +13,23 @@
       "name": "Find Channel"
     },
     {
+      "type": "0",
+      "inputtype": "1",
+      "input": "${serverVars(\"twitchuser\")}",
+      "info1": "0",
+      "info2": "5",
+      "info3": "3",
+      "info4": "0",
+      "clientid": "${serverVars(\"twitchclient-id\")}",
+      "results": "",
+      "storage": "1",
+      "varName": "twitchuserid",
+      "name": "Store Twitch Info"
+    },
+    {
       "type": "1",
       "inputtype": "0",
-      "input": "${serverVars(\"twitchuser-id\")}",
+      "input": "${tempVars(\"twitchuserid\")}",
       "info1": "2",
       "info2": "5",
       "info3": "3",
@@ -44,7 +59,7 @@
       "comparison": "1",
       "value": "\"false\"",
       "iftrue": "2",
-      "iftrueVal": "23",
+      "iftrueVal": "24",
       "iffalse": "3",
       "iffalseVal": "1",
       "name": "Check Variable"
@@ -80,7 +95,7 @@
     {
       "type": "1",
       "inputtype": "0",
-      "input": "${serverVars(\"twitchuser-id\")}",
+      "input": "${tempVars(\"twitchuserid\")}",
       "info1": "2",
       "info2": "6",
       "info3": "3",
@@ -94,7 +109,7 @@
     {
       "type": "1",
       "inputtype": "0",
-      "input": "${serverVars(\"twitchuser-id\")}",
+      "input": "${tempVars(\"twitchuserid\")}",
       "info1": "2",
       "info2": "10",
       "info3": "3",
@@ -108,7 +123,7 @@
     {
       "type": "1",
       "inputtype": "0",
-      "input": "${serverVars(\"twitchuser-id\")}",
+      "input": "${tempVars(\"twitchuserid\")}",
       "info1": "2",
       "info2": "2",
       "info3": "3",
@@ -122,7 +137,7 @@
     {
       "type": "1",
       "inputtype": "0",
-      "input": "${serverVars(\"twitchuser-id\")}",
+      "input": "${tempVars(\"twitchuserid\")}",
       "info1": "2",
       "info2": "3",
       "info3": "3",
@@ -150,7 +165,7 @@
     {
       "type": "1",
       "inputtype": "0",
-      "input": "${serverVars(\"twitchuser-id\")}",
+      "input": "${tempVars(\"twitchuserid\")}",
       "info1": "2",
       "info2": "7",
       "info3": "3",
@@ -266,8 +281,8 @@
     {
       "type": "0",
       "inputtype": "0",
-      "input": "${serverVars(\"twitchuser-id\")}",
-      "info1": "1",
+      "input": "${tempVars(\"twitchuserid\")}",
+      "info1": "2",
       "info2": "2",
       "info3": "3",
       "info4": "0",
@@ -280,7 +295,7 @@
     {
       "type": "0",
       "inputtype": "0",
-      "input": "${serverVars(\"twitchuser-id\")}",
+      "input": "${tempVars(\"twitchuserid\")}",
       "info1": "7",
       "info2": "7",
       "info3": "3",
@@ -292,7 +307,7 @@
       "name": "Store Twitch Info"
     },
     {
-      "title": "${tempVars(\"stream-name\")} ist nun wieder Offline",
+      "title": "${tempVars(\"stream-name\")} ist Offline",
       "author": "",
       "color": "#FF0000",
       "url": "https://twitch.tv/${tempVars(\"stream-name\")}",
