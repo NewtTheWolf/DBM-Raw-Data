@@ -1,4 +1,4 @@
-# Twitch StreamLive und Offline Meldung für DBM
+# Twitch Online und Offline Status Meldung für Discord
 
 Mit dieser Rawdata (event) kannst du auf deinem Discord anzeigen lassen wenn du Live auf Twitch bist. Das Event prüft alle 5 Minuten deinen Status. und postet es entsprechend in einen von dir fest gelegten Channel
 
