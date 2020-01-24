@@ -1,10 +1,21 @@
 {
   "name": "Livestream Check",
-  "temp": "60",
+  "temp": "5",
   "event-type": "3",
   "_id": "eGUoz",
   "author": "thaliruth#9938",
   "actions": [
+    {
+      "storage": "2",
+      "varName": "twitchchannel-id",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
     {
       "info": "0",
       "find": "${serverVars(\"twitchchannel-id\")}",
@@ -59,7 +70,7 @@
       "comparison": "1",
       "value": "\"false\"",
       "iftrue": "2",
-      "iftrueVal": "24",
+      "iftrueVal": "25",
       "iffalse": "3",
       "iffalseVal": "1",
       "name": "Check Variable"
