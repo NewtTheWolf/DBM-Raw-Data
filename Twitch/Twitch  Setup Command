@@ -1,0 +1,193 @@
+{
+  "name": "twitchsetup",
+  "author": "Thaliruth#9938",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "gacQc",
+  "actions": [
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "comment": "Twitch Client ID Abfrage",
+      "color": "#ff8040",
+      "name": "Comment"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Bitte gebe nun deine **Twitch Client ID** ein.\n\nWenn dunoch keine hast gehe wie folgt vor:\nGehe auf <https://dev.twitch.tv/console/app>\n\nUm eine Client-ID zu erhalten loggen dich über Twitch ein, erstellen eine neue Anwendung. Dann gib einen Namen und eine Url ein (dies könnte z.b. deine Twich, Youtube Seite sein).\nDann wähle unten die Kategorie \"Application Integration\" aus und klicke auf erstellen! Nun soltest du wieder auf der Seite mit der Anwendungsliste sein.\nDu must deine Anwendung noch einmal bearbeiten, um die Client-ID zu kopieren.",
+      "storage": "1",
+      "varName2": "msg0",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "filter": "content.length > 0 && author.id === '${member.id}'",
+      "max": "1",
+      "time": "120000",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "storage2": "1",
+      "varName2": "twitchclient-id",
+      "name": "Await Response Call Action"
+    },
+    {
+      "changeType": "0",
+      "value": "\"${tempVars(\"twitchclient-id\")}\"",
+      "storage": "2",
+      "varName": "twitchclient-id",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "2",
+      "varName": "twitchclient-id",
+      "name": "Save Variable"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "6",
+      "storage": "1",
+      "varName2": "lmsg0",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "lmsg0",
+      "name": "Delete Message"
+    },
+    {
+      "comment": "Twitch Username Abfrage",
+      "color": "#ff8040",
+      "name": "Comment"
+    },
+    {
+      "storage": "1",
+      "varName": "msg0",
+      "message": "Bitte gebe nun deinen Twitch Namen ein.",
+      "storage2": "1",
+      "varName2": "",
+      "name": "Edit Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "filter": "content.length > 0 && author.id === '${member.id}'",
+      "max": "1",
+      "time": "120000",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "storage2": "1",
+      "varName2": "twitchuser",
+      "name": "Await Response Call Action"
+    },
+    {
+      "changeType": "0",
+      "value": "\"${tempVars(\"twitchuser\")}\"",
+      "storage": "2",
+      "varName": "twitchuser",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "2",
+      "varName": "twitchuser",
+      "name": "Save Variable"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "6",
+      "storage": "1",
+      "varName2": "lmsg1",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "lmsg1",
+      "name": "Delete Message"
+    },
+    {
+      "comment": "Channel Abfrage",
+      "color": "#ff8040",
+      "name": "Comment"
+    },
+    {
+      "storage": "1",
+      "varName": "msg0",
+      "message": "Bitte gebe nun eine Channel ID ein wo die Livestreams gepostet werden sollen.\nDie Channel ID kannst du wie folgt ermitteln. Gebe dazu einfach `\\#channelname` ein, dann wird dir die Channel ID angezeigt. Kopiere davon nur die zahlen und lasse das **<#>** aus!",
+      "storage2": "1",
+      "varName2": "channel",
+      "name": "Edit Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "filter": "content.length > 0 && author.id === '${member.id}'",
+      "max": "1",
+      "time": "120000",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "storage2": "1",
+      "varName2": "twitchchannel-id",
+      "name": "Await Response Call Action"
+    },
+    {
+      "changeType": "0",
+      "value": "\"${tempVars(\"twitchchannel-id\")}\"",
+      "storage": "2",
+      "varName": "twitchchannel-id",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "2",
+      "varName": "twitchchannel-id",
+      "name": "Save Variable"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "6",
+      "storage": "1",
+      "varName2": "lmsg2",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "lmsg2",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "msg0",
+      "message": "Ok nun ist diese Konfiguration abgeschlossen, wenn du alles Richtig gemacht hast, sollte in ca **1 Minute** dein Livestream als Offline angezeigt werden in dem Channel den du eingegeben hast.",
+      "storage2": "1",
+      "varName2": "",
+      "name": "Edit Message"
+    },
+    {
+      "channel": "5",
+      "varName": "channel1",
+      "message": "TEST",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    }
+  ],
+  "_aliases": [
+    "ts"
+  ]
+}
