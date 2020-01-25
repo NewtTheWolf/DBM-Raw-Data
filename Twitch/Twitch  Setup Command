@@ -1,7 +1,7 @@
 {
   "name": "twitchsetup",
   "author": "Thaliruth#9938",
-  "permissions": "NONE",
+  "permissions": "ADMINISTRATOR",
   "restriction": "1",
   "_id": "gacQc",
   "actions": [
