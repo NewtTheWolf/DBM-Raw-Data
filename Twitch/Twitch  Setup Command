@@ -175,16 +175,6 @@
       "storage2": "1",
       "varName2": "",
       "name": "Edit Message"
-    },
-    {
-      "channel": "5",
-      "varName": "channel1",
-      "message": "TEST",
-      "storage": "0",
-      "varName2": "",
-      "iffalse": "0",
-      "iffalseVal": "",
-      "name": "Send Message"
     }
   ],
   "_aliases": [
