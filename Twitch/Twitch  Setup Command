@@ -18,7 +18,7 @@
     {
       "channel": "0",
       "varName": "",
-      "message": "Bitte gebe nun deine **Twitch Client ID** ein.\n\nWenn dunoch keine hast gehe wie folgt vor:\nGehe auf <https://dev.twitch.tv/console/app>\n\nUm eine Client-ID zu erhalten loggen dich über Twitch ein, erstellen eine neue Anwendung. Dann gib einen Namen und eine Url ein (dies könnte z.b. deine Twich, Youtube Seite sein).\nDann wähle unten die Kategorie \"Application Integration\" aus und klicke auf erstellen! Nun soltest du wieder auf der Seite mit der Anwendungsliste sein.\nDu must deine Anwendung noch einmal bearbeiten, um die Client-ID zu kopieren.",
+      "message": "**Schritt 1/3:**\nBitte gebe nun deine __Twitch Client ID__ ein.\n\nWenn du noch keine hast gehe wie folgt vor:\nGehe auf <https://dev.twitch.tv/console/app>\n\nUm eine Client-ID zu erhalten logge dich über Twitch ein, erstelle eine neue Anwendung. Dann gib einen Namen und eine Url ein (dies könnte z.b. deine Twich, Youtube Seite sein).\nDann wähle unten die Kategorie __\"Application Integration\"__ aus und klicke auf erstellen! Nun soltest du wieder auf der Seite mit der Anwendungsliste sein.\nDu must deine Anwendung noch einmal bearbeiten, um die Client-ID zu kopieren.",
       "storage": "1",
       "varName2": "msg0",
       "iffalse": "0",
@@ -33,8 +33,8 @@
       "time": "120000",
       "iftrue": "0",
       "iftrueVal": "",
-      "iffalse": "1",
-      "iffalseVal": "",
+      "iffalse": "2",
+      "iffalseVal": "25",
       "storage2": "1",
       "varName2": "twitchclient-id",
       "name": "Await Response Call Action"
@@ -72,7 +72,7 @@
     {
       "storage": "1",
       "varName": "msg0",
-      "message": "Bitte gebe nun deinen Twitch Namen ein.",
+      "message": "**Schritt 2/3**\n\nBitte gebe nun deinen Twitch Namen ein.",
       "storage2": "1",
       "varName2": "",
       "name": "Edit Message"
@@ -85,8 +85,8 @@
       "time": "120000",
       "iftrue": "0",
       "iftrueVal": "",
-      "iffalse": "1",
-      "iffalseVal": "",
+      "iffalse": "2",
+      "iffalseVal": "25",
       "storage2": "1",
       "varName2": "twitchuser",
       "name": "Await Response Call Action"
@@ -124,7 +124,7 @@
     {
       "storage": "1",
       "varName": "msg0",
-      "message": "Bitte gebe nun eine Channel ID ein wo die Livestreams gepostet werden sollen.\nDie Channel ID kannst du wie folgt ermitteln. Gebe dazu einfach `\\#channelname` ein, dann wird dir die Channel ID angezeigt. Kopiere davon nur die zahlen und lasse das **<#>** aus!",
+      "message": "**Schritt 3/3**\n\nBitte gebe nun eine Channel ID ein wo die Livestreams gepostet werden sollen.\nDie Channel ID kannst du wie folgt ermitteln. Gebe dazu einfach `\\#channelname` ein, dann wird dir die Channel ID angezeigt. Kopiere davon nur die zahlen und lasse das **<#>** aus!",
       "storage2": "1",
       "varName2": "channel",
       "name": "Edit Message"
@@ -137,8 +137,8 @@
       "time": "120000",
       "iftrue": "0",
       "iftrueVal": "",
-      "iffalse": "1",
-      "iffalseVal": "",
+      "iffalse": "2",
+      "iffalseVal": "25",
       "storage2": "1",
       "varName2": "twitchchannel-id",
       "name": "Await Response Call Action"
@@ -175,6 +175,54 @@
       "storage2": "1",
       "varName2": "",
       "name": "Edit Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "msg0",
+      "name": "Delete Message"
+    },
+    {
+      "title": "Zeit ist Abgelaufen!",
+      "author": "",
+      "color": "#ff0000",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "timeout",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "timeout",
+      "message": "Dein Setup wurde nicht Vollständig beendet!\nBitte führe daher das Setup erneut aus!",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "timeout",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
     }
   ],
   "_aliases": [
